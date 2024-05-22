@@ -13,11 +13,6 @@
         </repository>
     </repositories>
     <dependencies>
-        <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>AbsoluteLayout</artifactId>
-            <version>SNAPSHOT</version>
-        </dependency>
         
         <dependency>
             <groupId>com.formdev</groupId>
@@ -29,6 +24,12 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
+        </dependency>
+        <dependency>
+            <groupId>unknown.binary</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>SNAPSHOT</version>
+            <type>jar</type>
         </dependency>
     </dependencies>
     

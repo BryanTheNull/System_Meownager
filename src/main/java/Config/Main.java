@@ -1,6 +1,6 @@
 package Config;
 
-import View.MainInterface;
+import View.EntrySystem.Login;
 import com.formdev.flatlaf.FlatLightLaf;
 
 /**
@@ -10,6 +10,7 @@ import com.formdev.flatlaf.FlatLightLaf;
 public class Main {
     public static void main(String[] args) {
         FlatLightLaf.setup();
-        MainInterface ArrarcarPrograma = new MainInterface();
+        Login login = new Login();
+        login.setVisible(true);
     }
 }

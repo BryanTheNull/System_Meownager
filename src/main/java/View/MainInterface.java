@@ -1,17 +1,13 @@
 package View;
 
-import Config.GradientPanel;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import javax.swing.JPanel;
-
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 
 public class MainInterface extends javax.swing.JFrame {
-    private JPanel panelDegradado;
 
     public MainInterface() {
         initComponents();
-        degradadoPanel();
+        setFecha();
         setVisible(true);
     }
 
@@ -23,13 +19,13 @@ public class MainInterface extends javax.swing.JFrame {
         panelBarraNavegacion = new javax.swing.JPanel();
         lbLogoYNombre = new javax.swing.JLabel();
         lbBarraDeSeparacion = new javax.swing.JLabel();
+        btnMenuPrincipal = new javax.swing.JPanel();
+        txtSalir1 = new javax.swing.JLabel();
         btnSalir1 = new javax.swing.JPanel();
         txtSalir = new javax.swing.JLabel();
-        btnSalir2 = new javax.swing.JPanel();
-        txtSalir1 = new javax.swing.JLabel();
-        btnSalir4 = new javax.swing.JPanel();
+        btnProductos = new javax.swing.JPanel();
         txtSalir3 = new javax.swing.JLabel();
-        btnSalir5 = new javax.swing.JPanel();
+        btnClientes = new javax.swing.JPanel();
         txtSalir4 = new javax.swing.JLabel();
         btnSalir6 = new javax.swing.JPanel();
         txtSalir5 = new javax.swing.JLabel();
@@ -38,11 +34,16 @@ public class MainInterface extends javax.swing.JFrame {
         btnSalir8 = new javax.swing.JPanel();
         txtSalir7 = new javax.swing.JLabel();
         panelChanging = new javax.swing.JPanel();
+        panelBarraSuperior = new javax.swing.JPanel();
+        txtFecha = new javax.swing.JLabel();
+        txtMensaje = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Meownager");
         setLocation(new java.awt.Point(0, 0));
         setLocationByPlatform(true);
+        setMaximumSize(new java.awt.Dimension(1200, 700));
+        setMinimumSize(new java.awt.Dimension(1200, 700));
         setResizable(false);
 
         panelBackground.setBackground(new java.awt.Color(255, 255, 255));
@@ -51,7 +52,7 @@ public class MainInterface extends javax.swing.JFrame {
         panelBackground.setPreferredSize(new java.awt.Dimension(1200, 700));
         panelBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelBarraNavegacion.setBackground(new java.awt.Color(0, 51, 204));
+        panelBarraNavegacion.setBackground(new java.awt.Color(13, 71, 160));
         panelBarraNavegacion.setMaximumSize(null);
         panelBarraNavegacion.setMinimumSize(new java.awt.Dimension(250, 700));
         panelBarraNavegacion.setName(""); // NOI18N
@@ -68,6 +69,38 @@ public class MainInterface extends javax.swing.JFrame {
         lbBarraDeSeparacion.setText("_______");
         lbBarraDeSeparacion.setToolTipText("");
         lbBarraDeSeparacion.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        btnMenuPrincipal.setMaximumSize(new java.awt.Dimension(250, 50));
+        btnMenuPrincipal.setMinimumSize(new java.awt.Dimension(250, 50));
+        btnMenuPrincipal.setOpaque(false);
+        btnMenuPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnMenuPrincipalMousePressed(evt);
+            }
+        });
+
+        txtSalir1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
+        txtSalir1.setForeground(new java.awt.Color(255, 255, 255));
+        txtSalir1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtSalir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cerrar-sesion24x24.png"))); // NOI18N
+        txtSalir1.setText("Menu Principal");
+
+        javax.swing.GroupLayout btnMenuPrincipalLayout = new javax.swing.GroupLayout(btnMenuPrincipal);
+        btnMenuPrincipal.setLayout(btnMenuPrincipalLayout);
+        btnMenuPrincipalLayout.setHorizontalGroup(
+            btnMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnMenuPrincipalLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(txtSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        btnMenuPrincipalLayout.setVerticalGroup(
+            btnMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnMenuPrincipalLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtSalir1)
+                .addGap(13, 13, 13))
+        );
 
         btnSalir1.setMaximumSize(new java.awt.Dimension(250, 50));
         btnSalir1.setMinimumSize(new java.awt.Dimension(250, 50));
@@ -92,41 +125,14 @@ public class MainInterface extends javax.swing.JFrame {
         btnSalir1Layout.setVerticalGroup(
             btnSalir1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnSalir1Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txtSalir)
                 .addGap(13, 13, 13))
         );
 
-        btnSalir2.setMaximumSize(new java.awt.Dimension(250, 50));
-        btnSalir2.setMinimumSize(new java.awt.Dimension(250, 50));
-        btnSalir2.setOpaque(false);
-
-        txtSalir1.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
-        txtSalir1.setForeground(new java.awt.Color(255, 255, 255));
-        txtSalir1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        txtSalir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cerrar-sesion24x24.png"))); // NOI18N
-        txtSalir1.setText("Menu Principal");
-
-        javax.swing.GroupLayout btnSalir2Layout = new javax.swing.GroupLayout(btnSalir2);
-        btnSalir2.setLayout(btnSalir2Layout);
-        btnSalir2Layout.setHorizontalGroup(
-            btnSalir2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnSalir2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(txtSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        btnSalir2Layout.setVerticalGroup(
-            btnSalir2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnSalir2Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(txtSalir1)
-                .addGap(13, 13, 13))
-        );
-
-        btnSalir4.setMaximumSize(new java.awt.Dimension(250, 50));
-        btnSalir4.setMinimumSize(new java.awt.Dimension(250, 50));
-        btnSalir4.setOpaque(false);
+        btnProductos.setMaximumSize(new java.awt.Dimension(250, 50));
+        btnProductos.setMinimumSize(new java.awt.Dimension(250, 50));
+        btnProductos.setOpaque(false);
 
         txtSalir3.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         txtSalir3.setForeground(new java.awt.Color(255, 255, 255));
@@ -134,26 +140,26 @@ public class MainInterface extends javax.swing.JFrame {
         txtSalir3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cerrar-sesion24x24.png"))); // NOI18N
         txtSalir3.setText("Productos");
 
-        javax.swing.GroupLayout btnSalir4Layout = new javax.swing.GroupLayout(btnSalir4);
-        btnSalir4.setLayout(btnSalir4Layout);
-        btnSalir4Layout.setHorizontalGroup(
-            btnSalir4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnSalir4Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnProductosLayout = new javax.swing.GroupLayout(btnProductos);
+        btnProductos.setLayout(btnProductosLayout);
+        btnProductosLayout.setHorizontalGroup(
+            btnProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnProductosLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(txtSalir3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
-        btnSalir4Layout.setVerticalGroup(
-            btnSalir4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnSalir4Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+        btnProductosLayout.setVerticalGroup(
+            btnProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnProductosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txtSalir3)
                 .addGap(13, 13, 13))
         );
 
-        btnSalir5.setMaximumSize(new java.awt.Dimension(250, 50));
-        btnSalir5.setMinimumSize(new java.awt.Dimension(250, 50));
-        btnSalir5.setOpaque(false);
+        btnClientes.setMaximumSize(new java.awt.Dimension(250, 50));
+        btnClientes.setMinimumSize(new java.awt.Dimension(250, 50));
+        btnClientes.setOpaque(false);
 
         txtSalir4.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         txtSalir4.setForeground(new java.awt.Color(255, 255, 255));
@@ -161,19 +167,19 @@ public class MainInterface extends javax.swing.JFrame {
         txtSalir4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cerrar-sesion24x24.png"))); // NOI18N
         txtSalir4.setText("Clientes");
 
-        javax.swing.GroupLayout btnSalir5Layout = new javax.swing.GroupLayout(btnSalir5);
-        btnSalir5.setLayout(btnSalir5Layout);
-        btnSalir5Layout.setHorizontalGroup(
-            btnSalir5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnSalir5Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnClientesLayout = new javax.swing.GroupLayout(btnClientes);
+        btnClientes.setLayout(btnClientesLayout);
+        btnClientesLayout.setHorizontalGroup(
+            btnClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnClientesLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(txtSalir4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
-        btnSalir5Layout.setVerticalGroup(
-            btnSalir5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnSalir5Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+        btnClientesLayout.setVerticalGroup(
+            btnClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnClientesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txtSalir4)
                 .addGap(13, 13, 13))
         );
@@ -200,7 +206,7 @@ public class MainInterface extends javax.swing.JFrame {
         btnSalir6Layout.setVerticalGroup(
             btnSalir6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnSalir6Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txtSalir5)
                 .addGap(13, 13, 13))
         );
@@ -227,7 +233,7 @@ public class MainInterface extends javax.swing.JFrame {
         btnSalir7Layout.setVerticalGroup(
             btnSalir7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnSalir7Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txtSalir6)
                 .addGap(13, 13, 13))
         );
@@ -254,7 +260,7 @@ public class MainInterface extends javax.swing.JFrame {
         btnSalir8Layout.setVerticalGroup(
             btnSalir8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnSalir8Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txtSalir7)
                 .addGap(13, 13, 13))
         );
@@ -275,9 +281,9 @@ public class MainInterface extends javax.swing.JFrame {
                                 .addComponent(lbBarraDeSeparacion)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(btnSalir1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSalir2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSalir4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSalir5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMenuPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnProductos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSalir6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSalir7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSalir8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -291,11 +297,11 @@ public class MainInterface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbBarraDeSeparacion, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSalir4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSalir5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnSalir6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -309,20 +315,55 @@ public class MainInterface extends javax.swing.JFrame {
 
         panelBackground.add(panelBarraNavegacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 700));
 
-        panelChanging.setBackground(new java.awt.Color(255, 255, 255));
+        panelChanging.setBackground(new java.awt.Color(250, 251, 253));
         panelChanging.setMaximumSize(new java.awt.Dimension(950, 700));
         panelChanging.setMinimumSize(new java.awt.Dimension(950, 700));
         panelChanging.setPreferredSize(new java.awt.Dimension(950, 700));
+
+        panelBarraSuperior.setBackground(new java.awt.Color(24, 118, 210));
+
+        txtFecha.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        txtFecha.setForeground(new java.awt.Color(255, 255, 255));
+        txtFecha.setText("Hoy es {diaSemana} {dia} de {mes} de {año}");
+
+        javax.swing.GroupLayout panelBarraSuperiorLayout = new javax.swing.GroupLayout(panelBarraSuperior);
+        panelBarraSuperior.setLayout(panelBarraSuperiorLayout);
+        panelBarraSuperiorLayout.setHorizontalGroup(
+            panelBarraSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBarraSuperiorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(585, Short.MAX_VALUE))
+        );
+        panelBarraSuperiorLayout.setVerticalGroup(
+            panelBarraSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBarraSuperiorLayout.createSequentialGroup()
+                .addContainerGap(60, Short.MAX_VALUE)
+                .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        txtMensaje.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        txtMensaje.setText("Bienvenido a tu sistema favorito ♥");
 
         javax.swing.GroupLayout panelChangingLayout = new javax.swing.GroupLayout(panelChanging);
         panelChanging.setLayout(panelChangingLayout);
         panelChangingLayout.setHorizontalGroup(
             panelChangingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 950, Short.MAX_VALUE)
+            .addComponent(panelBarraSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelChangingLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelChangingLayout.setVerticalGroup(
             panelChangingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(panelChangingLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(txtMensaje)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelBarraSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(549, Short.MAX_VALUE))
         );
 
         panelBackground.add(panelChanging, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 950, 700));
@@ -341,22 +382,34 @@ public class MainInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void degradadoPanel() {
-        // Crear panel degradado y pintar la barra de navegacion.
-        panelDegradado = new GradientPanel(Color.decode("#1CB5E0"), Color.decode("#000046"));
-        panelBarraNavegacion.setLayout(new BorderLayout());
-        panelBarraNavegacion.add(panelDegradado, BorderLayout.CENTER);
-    }
-    
-    private void panelesTransparentes(){
-        
+    private void setFecha() {
+        LocalDate now = LocalDate.now();
+        int dia = now.getDayOfMonth();
+        int mes = now.getMonthValue();
+        int año = now.getYear();
+        DayOfWeek diaSemana = now.getDayOfWeek();
+
+        String[] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octuble", "Noviembre", "Diciembre"};
+        String nombreMes = meses[mes - 1];
+
+        String[] diasSemana = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"};
+        String nombreDiaSemana = diasSemana[diaSemana.getValue() - 1];
+
+        String fechaFormateada = "Hoy es " + nombreDiaSemana + " "+ dia + " de " + nombreMes + " de " + año;
+
+        txtFecha.setText(fechaFormateada);
     }
 
+    private void btnMenuPrincipalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuPrincipalMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMenuPrincipalMousePressed
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel btnClientes;
+    private javax.swing.JPanel btnMenuPrincipal;
+    private javax.swing.JPanel btnProductos;
     private javax.swing.JPanel btnSalir1;
-    private javax.swing.JPanel btnSalir2;
-    private javax.swing.JPanel btnSalir4;
-    private javax.swing.JPanel btnSalir5;
     private javax.swing.JPanel btnSalir6;
     private javax.swing.JPanel btnSalir7;
     private javax.swing.JPanel btnSalir8;
@@ -364,7 +417,10 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel lbLogoYNombre;
     private javax.swing.JPanel panelBackground;
     private javax.swing.JPanel panelBarraNavegacion;
+    private javax.swing.JPanel panelBarraSuperior;
     private javax.swing.JPanel panelChanging;
+    private javax.swing.JLabel txtFecha;
+    private javax.swing.JLabel txtMensaje;
     private javax.swing.JLabel txtSalir;
     private javax.swing.JLabel txtSalir1;
     private javax.swing.JLabel txtSalir3;
