@@ -42,6 +42,7 @@ public class LoginController implements ActionListener {
             register.setVisible(true);
             login.dispose();
         }
+       
     }
 
     // Metodos de Login
@@ -82,4 +83,5 @@ public class LoginController implements ActionListener {
         }
         return false;
     }
+    
 }

@@ -1,6 +1,5 @@
 package View.EntrySystem;
 
-import Config.SendEmail;
 import Controller.EntrySystem.LoginController;
 import java.awt.Color;
 
@@ -16,12 +15,6 @@ public class Login extends javax.swing.JFrame {
         controller = new LoginController(this);
         txtContraseña.setEchoChar((char) 0);
         
-//        String emailTo = "bmillaleo21@gmail.com";
-//        String subject = "Correo de prueba";
-//        String content = "Este es un correo de pruebas para benja, esta siendo enviado desde java";
-//
-//        SendEmail email = new SendEmail(emailTo, subject, content);
-//        email.send();
 
 
 
@@ -105,6 +98,17 @@ public class Login extends javax.swing.JFrame {
         lbRecuperarContraseña.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbRecuperarContraseña.setText("¿Olvidaste tu contraseña?");
         lbRecuperarContraseña.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbRecuperarContraseña.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbRecuperarContraseñaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lbRecuperarContraseñaMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lbRecuperarContraseñaMousePressed(evt);
+            }
+        });
 
         btnIniciarSesiónPrincipal.setBackground(new java.awt.Color(66, 183, 42));
         btnIniciarSesiónPrincipal.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
@@ -281,6 +285,20 @@ public class Login extends javax.swing.JFrame {
             limiarContraseña = false;
         }
     }//GEN-LAST:event_txtContraseñaKeyPressed
+
+    private void lbRecuperarContraseñaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbRecuperarContraseñaMouseEntered
+        lbRecuperarContraseña.setForeground(Color.decode("#0B57D3"));
+    }//GEN-LAST:event_lbRecuperarContraseñaMouseEntered
+
+    private void lbRecuperarContraseñaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbRecuperarContraseñaMouseExited
+        lbRecuperarContraseña.setForeground(Color.BLACK);
+    }//GEN-LAST:event_lbRecuperarContraseñaMouseExited
+
+    private void lbRecuperarContraseñaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbRecuperarContraseñaMousePressed
+        RecoverPassword recoverPassword = new RecoverPassword();
+        recoverPassword.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_lbRecuperarContraseñaMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

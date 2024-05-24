@@ -230,7 +230,7 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/icons/cerrar-sesion24x24.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Menu Principal"/>
+                    <Property name="text" type="java.lang.String" value="Principal"/>
                   </Properties>
                 </Component>
               </SubComponents>

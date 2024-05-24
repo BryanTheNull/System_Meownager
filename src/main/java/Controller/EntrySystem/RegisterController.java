@@ -3,7 +3,6 @@ package Controller.EntrySystem;
 import Config.PasswordUtils;
 import View.EntrySystem.Login;
 import View.EntrySystem.Register;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -39,6 +38,7 @@ public class RegisterController implements ActionListener, DocumentListener {
                             Login login = new Login();
                             login.txtEmail.setText(email);
                             login.txtContraseña.setText(contraseña);
+                            login.txtContraseña.setEchoChar('*');
                             login.btnIniciarSesiónPrincipal.requestFocusInWindow();
                             login.setVisible(true);
                             register.dispose();
@@ -65,15 +65,17 @@ public class RegisterController implements ActionListener, DocumentListener {
     public void insertUpdate(DocumentEvent e) {
         String contraseña = register.txtContraseña.getText();
         int estado = verificarCombinacion(contraseña);
-        if (estado == 1) {
-            register.barraVerificacionRoja.setVisible(true);
-        } else if (estado == 2) {
-            register.barraVerificacionRoja.setVisible(true);
-            register.barraVerificacionAmarillo.setVisible(true);
-        } else {
-            register.barraVerificacionRoja.setVisible(true);
-            register.barraVerificacionAmarillo.setVisible(true);
-            register.barraVerificacionVerde.setVisible(true);
+        if (!contraseña.equals("Contraseña") && !contraseña.equals("")) {
+            if (estado == 1) {
+                register.barraVerificacionRoja.setVisible(true);
+            } else if (estado == 2) {
+                register.barraVerificacionRoja.setVisible(true);
+                register.barraVerificacionAmarillo.setVisible(true);
+            } else {
+                register.barraVerificacionRoja.setVisible(true);
+                register.barraVerificacionAmarillo.setVisible(true);
+                register.barraVerificacionVerde.setVisible(true);
+            }
         }
     }
 
@@ -81,13 +83,25 @@ public class RegisterController implements ActionListener, DocumentListener {
     public void removeUpdate(DocumentEvent e) {
         String contraseña = register.txtContraseña.getText();
         int estado = verificarCombinacion(contraseña);
-        if (estado == 1) {
-            register.barraVerificacionAmarillo.setVisible(false);
-            register.barraVerificacionVerde.setVisible(false);
-        } else if (estado == 2) {
-            register.barraVerificacionVerde.setVisible(false);
+
+        if (!contraseña.equals("Contraseña") && !contraseña.equals("")) {
+            if (estado == 1) {
+                register.barraVerificacionRoja.setVisible(true);
+                register.barraVerificacionAmarillo.setVisible(false);
+                register.barraVerificacionVerde.setVisible(false);
+            } else if (estado == 2) {
+                register.barraVerificacionRoja.setVisible(true);
+                register.barraVerificacionAmarillo.setVisible(true);
+                register.barraVerificacionVerde.setVisible(false);
+            } else {
+                register.barraVerificacionRoja.setVisible(true);
+                register.barraVerificacionAmarillo.setVisible(true);
+                register.barraVerificacionVerde.setVisible(true);
+            }
         } else {
             register.barraVerificacionRoja.setVisible(false);
+            register.barraVerificacionAmarillo.setVisible(false);
+            register.barraVerificacionVerde.setVisible(false);
         }
     }
 

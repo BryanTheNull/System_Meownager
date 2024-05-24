@@ -122,7 +122,7 @@ public class MainInterface extends javax.swing.JFrame {
         txtSalir1.setForeground(new java.awt.Color(255, 255, 255));
         txtSalir1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         txtSalir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cerrar-sesion24x24.png"))); // NOI18N
-        txtSalir1.setText("Menu Principal");
+        txtSalir1.setText("Principal");
 
         javax.swing.GroupLayout btnMenuPrincipalLayout = new javax.swing.GroupLayout(btnMenuPrincipal);
         btnMenuPrincipal.setLayout(btnMenuPrincipalLayout);
