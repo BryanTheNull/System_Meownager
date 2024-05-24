@@ -1,8 +1,7 @@
 package Controller.EntrySystem;
 
 import Config.MySQLConnection;
-import Model.Usuario;
-import com.sun.source.tree.TryTree;
+import Config.PasswordUtils;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +13,6 @@ public class LoginOperation {
     ResultSet rs;
     Connection con;
     MySQLConnection dbConnection = MySQLConnection.getInstance();
-    Usuario usuarioLogin = new Usuario();
 
     public int SQL_VerificarExistenciaUsuario(String v_Email) {
         int r = 0;
@@ -26,8 +24,6 @@ public class LoginOperation {
 
             rs = ps.executeQuery(); // Ejecutar consulta sql
             
-            
-
             // Verificar si el usuario existe
             if (rs.next()) {
                 int count = rs.getInt(1);
@@ -35,7 +31,6 @@ public class LoginOperation {
                     r = 1; // El usuario existe
                 }
             }
-            
             // Cerrar coneccion
             dbConnection.closeConnection(con);
 
@@ -43,5 +38,27 @@ public class LoginOperation {
             e.printStackTrace();
         }
         return r;
+    }
+    
+    public boolean SQL_VerificarContraseña(String v_Email, String v_ContraseñaIngresada){
+        try {
+            con = dbConnection.getConnection();
+            String sql = "SELECT Contraseña FROM Usuarios WHERE Email = ?";
+            ps = con.prepareStatement(sql);
+            ps.setString(1, v_Email);
+            
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                String contraseñaAlmacenada = rs.getString("Contraseña");
+                if (PasswordUtils.checkPassword(v_ContraseñaIngresada, contraseñaAlmacenada)){
+                    return true;
+                }  
+            }
+            dbConnection.closeConnection(con);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

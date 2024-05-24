@@ -1,16 +1,56 @@
 package View;
 
-import java.time.DayOfWeek;
-import java.time.LocalDate;
+import Controller.InicioController;
+import Controller.ProductoController;
+import View.Paneles.PanelInicio;
+import View.Paneles.PanelProductos;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+
 
 public class MainInterface extends javax.swing.JFrame {
-
+    private MainInterface mainInterface;
+    
+    
+    // Crear instancias de interfazes para manejar ventanas.
+    PanelInicio panelInicio = new PanelInicio();
+    InicioController inicioController = new InicioController(panelInicio);
+    
+    PanelProductos panelProductos = new PanelProductos();
+    ProductoController productosController = new ProductoController(panelProductos);
+            
     public MainInterface() {
         initComponents();
-        setFecha();
-        setVisible(true);
+        ShowPanel(panelInicio);
     }
 
+    private void ShowPanel(JPanel p) {
+        p.setSize(1100, 630);
+        p.setLocation(0, 0);
+
+        panelChanging.removeAll();
+        panelChanging.add(p, BorderLayout.CENTER);
+        panelChanging.revalidate();
+        panelChanging.repaint();
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -33,10 +73,9 @@ public class MainInterface extends javax.swing.JFrame {
         txtSalir6 = new javax.swing.JLabel();
         btnSalir8 = new javax.swing.JPanel();
         txtSalir7 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         panelChanging = new javax.swing.JPanel();
-        panelBarraSuperior = new javax.swing.JPanel();
-        txtFecha = new javax.swing.JLabel();
-        txtMensaje = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Meownager");
@@ -133,6 +172,11 @@ public class MainInterface extends javax.swing.JFrame {
         btnProductos.setMaximumSize(new java.awt.Dimension(250, 50));
         btnProductos.setMinimumSize(new java.awt.Dimension(250, 50));
         btnProductos.setOpaque(false);
+        btnProductos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnProductosMousePressed(evt);
+            }
+        });
 
         txtSalir3.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         txtSalir3.setForeground(new java.awt.Color(255, 255, 255));
@@ -265,12 +309,27 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Operaciones");
+
+        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Ajustes");
+
         javax.swing.GroupLayout panelBarraNavegacionLayout = new javax.swing.GroupLayout(panelBarraNavegacion);
         panelBarraNavegacion.setLayout(panelBarraNavegacionLayout);
         panelBarraNavegacionLayout.setHorizontalGroup(
             panelBarraNavegacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBarraNavegacionLayout.createSequentialGroup()
                 .addGroup(panelBarraNavegacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSalir1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMenuPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnProductos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSalir6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSalir7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSalir8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelBarraNavegacionLayout.createSequentialGroup()
                         .addGroup(panelBarraNavegacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelBarraNavegacionLayout.createSequentialGroup()
@@ -278,15 +337,13 @@ public class MainInterface extends javax.swing.JFrame {
                                 .addComponent(lbLogoYNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelBarraNavegacionLayout.createSequentialGroup()
                                 .addGap(54, 54, 54)
-                                .addComponent(lbBarraDeSeparacion)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(btnSalir1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnMenuPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnProductos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSalir6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSalir7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSalir8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(lbBarraDeSeparacion))
+                            .addGroup(panelBarraNavegacionLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(panelBarraNavegacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panelBarraNavegacionLayout.setVerticalGroup(
@@ -296,21 +353,25 @@ public class MainInterface extends javax.swing.JFrame {
                 .addComponent(lbLogoYNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbBarraDeSeparacion, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnSalir6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSalir7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(btnSalir8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSalir6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnSalir7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSalir8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
 
         panelBackground.add(panelBarraNavegacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 700));
@@ -320,50 +381,15 @@ public class MainInterface extends javax.swing.JFrame {
         panelChanging.setMinimumSize(new java.awt.Dimension(950, 700));
         panelChanging.setPreferredSize(new java.awt.Dimension(950, 700));
 
-        panelBarraSuperior.setBackground(new java.awt.Color(24, 118, 210));
-
-        txtFecha.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        txtFecha.setForeground(new java.awt.Color(255, 255, 255));
-        txtFecha.setText("Hoy es {diaSemana} {dia} de {mes} de {año}");
-
-        javax.swing.GroupLayout panelBarraSuperiorLayout = new javax.swing.GroupLayout(panelBarraSuperior);
-        panelBarraSuperior.setLayout(panelBarraSuperiorLayout);
-        panelBarraSuperiorLayout.setHorizontalGroup(
-            panelBarraSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBarraSuperiorLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(585, Short.MAX_VALUE))
-        );
-        panelBarraSuperiorLayout.setVerticalGroup(
-            panelBarraSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBarraSuperiorLayout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
-                .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        txtMensaje.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txtMensaje.setText("Bienvenido a tu sistema favorito ♥");
-
         javax.swing.GroupLayout panelChangingLayout = new javax.swing.GroupLayout(panelChanging);
         panelChanging.setLayout(panelChangingLayout);
         panelChangingLayout.setHorizontalGroup(
             panelChangingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelBarraSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(panelChangingLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 950, Short.MAX_VALUE)
         );
         panelChangingLayout.setVerticalGroup(
             panelChangingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelChangingLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(txtMensaje)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelBarraSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(549, Short.MAX_VALUE))
+            .addGap(0, 700, Short.MAX_VALUE)
         );
 
         panelBackground.add(panelChanging, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 950, 700));
@@ -380,30 +406,17 @@ public class MainInterface extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void setFecha() {
-        LocalDate now = LocalDate.now();
-        int dia = now.getDayOfMonth();
-        int mes = now.getMonthValue();
-        int año = now.getYear();
-        DayOfWeek diaSemana = now.getDayOfWeek();
-
-        String[] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octuble", "Noviembre", "Diciembre"};
-        String nombreMes = meses[mes - 1];
-
-        String[] diasSemana = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"};
-        String nombreDiaSemana = diasSemana[diaSemana.getValue() - 1];
-
-        String fechaFormateada = "Hoy es " + nombreDiaSemana + " "+ dia + " de " + nombreMes + " de " + año;
-
-        txtFecha.setText(fechaFormateada);
-    }
-
+    // EVENTOS PARA CAMBIAR PANELES.
     private void btnMenuPrincipalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuPrincipalMousePressed
-        // TODO add your handling code here:
+        ShowPanel(panelInicio);
     }//GEN-LAST:event_btnMenuPrincipalMousePressed
 
+    private void btnProductosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductosMousePressed
+        ShowPanel(panelProductos);
+    }//GEN-LAST:event_btnProductosMousePressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnClientes;
@@ -413,14 +426,13 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel btnSalir6;
     private javax.swing.JPanel btnSalir7;
     private javax.swing.JPanel btnSalir8;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lbBarraDeSeparacion;
     private javax.swing.JLabel lbLogoYNombre;
     private javax.swing.JPanel panelBackground;
     private javax.swing.JPanel panelBarraNavegacion;
-    private javax.swing.JPanel panelBarraSuperior;
     private javax.swing.JPanel panelChanging;
-    private javax.swing.JLabel txtFecha;
-    private javax.swing.JLabel txtMensaje;
     private javax.swing.JLabel txtSalir;
     private javax.swing.JLabel txtSalir1;
     private javax.swing.JLabel txtSalir3;
