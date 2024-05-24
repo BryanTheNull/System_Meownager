@@ -16,12 +16,14 @@ public class Login extends javax.swing.JFrame {
         controller = new LoginController(this);
         txtContraseña.setEchoChar((char) 0);
         
-        String emailTo = "martinlopezh44@gmail.com";
-        String subject = "Correo de prueba";
-        String content = "Este es un correo de pruebas para martin, esta siendo enviado desde java";
+//        String emailTo = "bmillaleo21@gmail.com";
+//        String subject = "Correo de prueba";
+//        String content = "Este es un correo de pruebas para benja, esta siendo enviado desde java";
+//
+//        SendEmail email = new SendEmail(emailTo, subject, content);
+//        email.send();
 
-        SendEmail email = new SendEmail(emailTo, subject, content);
-        email.send();
+
 
     }
 
@@ -124,13 +126,12 @@ public class Login extends javax.swing.JFrame {
                         .addGroup(panelDatosLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panelDatosLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(panelDatosLoginLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(btnIniciarSesiónPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelDatosLoginLayout.createSequentialGroup()
-                            .addGap(250, 250, 250)
-                            .addComponent(lbRecuperarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(panelDatosLoginLayout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addComponent(btnIniciarSesiónPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelDatosLoginLayout.createSequentialGroup()
+                        .addGap(270, 270, 270)
+                        .addComponent(lbRecuperarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(150, 150, 150))
         );
         panelDatosLoginLayout.setVerticalGroup(
