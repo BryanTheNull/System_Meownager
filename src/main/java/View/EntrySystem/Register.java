@@ -39,6 +39,7 @@ public class Register extends javax.swing.JFrame {
         barraVerificacionRoja = new javax.swing.JProgressBar();
         barraVerificacionAmarillo = new javax.swing.JProgressBar();
         barraVerificacionVerde = new javax.swing.JProgressBar();
+        mostrarContraseña = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -52,22 +53,22 @@ public class Register extends javax.swing.JFrame {
         background.setPreferredSize(new java.awt.Dimension(1200, 700));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelDiseñoRegistro.setBackground(new java.awt.Color(13, 71, 160));
+        panelDiseñoRegistro.setBackground(new java.awt.Color(14, 125, 128));
         panelDiseñoRegistro.setMaximumSize(new java.awt.Dimension(500, 700));
         panelDiseñoRegistro.setMinimumSize(new java.awt.Dimension(500, 700));
         panelDiseñoRegistro.setPreferredSize(new java.awt.Dimension(500, 700));
 
-        lbTituloLogin.setFont(new java.awt.Font("SansSerif", 1, 30)); // NOI18N
+        lbTituloLogin.setFont(new java.awt.Font("Roboto Black", 1, 30)); // NOI18N
         lbTituloLogin.setForeground(new java.awt.Color(255, 255, 255));
         lbTituloLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbTituloLogin.setText("Bienvenido!");
+        lbTituloLogin.setText("BIENVENIDO");
 
-        lbSubTitulo.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lbSubTitulo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lbSubTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lbSubTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbSubTitulo.setText(" ¿Ya tienes cuenta? ");
 
-        lbTituloLogin2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lbTituloLogin2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lbTituloLogin2.setForeground(new java.awt.Color(255, 255, 255));
         lbTituloLogin2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbTituloLogin2.setText("Inicia Sesión y comienza a utilizar Meownager.");
@@ -110,7 +111,7 @@ public class Register extends javax.swing.JFrame {
                 .addComponent(lbTituloLogin2)
                 .addGap(64, 64, 64)
                 .addComponent(btnIniciarSesiónSecundario, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(330, Short.MAX_VALUE))
+                .addContainerGap(324, Short.MAX_VALUE))
         );
 
         background.add(panelDiseñoRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 700));
@@ -120,11 +121,12 @@ public class Register extends javax.swing.JFrame {
         panelDatosRegistro.setMinimumSize(new java.awt.Dimension(700, 700));
         panelDatosRegistro.setRequestFocusEnabled(false);
 
-        lbTituloDatos.setFont(new java.awt.Font("SansSerif", 1, 30)); // NOI18N
-        lbTituloDatos.setForeground(new java.awt.Color(0, 0, 204));
+        lbTituloDatos.setFont(new java.awt.Font("Roboto Black", 1, 30)); // NOI18N
+        lbTituloDatos.setForeground(new java.awt.Color(14, 125, 128));
         lbTituloDatos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbTituloDatos.setText("Registrarse");
+        lbTituloDatos.setText("REGISTRARSE");
 
+        txtNombre.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         txtNombre.setForeground(new java.awt.Color(153, 153, 153));
         txtNombre.setText("Nombre");
         txtNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -139,6 +141,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
+        txtEmail.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(153, 153, 153));
         txtEmail.setText("Email");
         txtEmail.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -153,6 +156,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
+        txtContraseña.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         txtContraseña.setForeground(new java.awt.Color(153, 153, 153));
         txtContraseña.setText("Contraseña");
         txtContraseña.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -167,6 +171,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
+        txtRepetirContraseñaa.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         txtRepetirContraseñaa.setForeground(new java.awt.Color(153, 153, 153));
         txtRepetirContraseñaa.setText("Repetir Contraseña");
         txtRepetirContraseñaa.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -193,6 +198,10 @@ public class Register extends javax.swing.JFrame {
 
         barraVerificacionVerde.setBackground(new java.awt.Color(0, 255, 0));
 
+        mostrarContraseña.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        mostrarContraseña.setBorder(null);
+        mostrarContraseña.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         javax.swing.GroupLayout panelDatosRegistroLayout = new javax.swing.GroupLayout(panelDatosRegistro);
         panelDatosRegistro.setLayout(panelDatosRegistroLayout);
         panelDatosRegistroLayout.setHorizontalGroup(
@@ -209,13 +218,16 @@ public class Register extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(panelDatosRegistroLayout.createSequentialGroup()
                         .addGroup(panelDatosRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelDatosRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                                .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                                .addComponent(txtContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                                .addGroup(panelDatosRegistroLayout.createSequentialGroup()
-                                    .addGap(99, 99, 99)
-                                    .addComponent(btnRegistrarsePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(panelDatosRegistroLayout.createSequentialGroup()
+                                .addGroup(panelDatosRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                                    .addComponent(txtContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                                    .addGroup(panelDatosRegistroLayout.createSequentialGroup()
+                                        .addGap(99, 99, 99)
+                                        .addComponent(btnRegistrarsePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mostrarContraseña))
                             .addGroup(panelDatosRegistroLayout.createSequentialGroup()
                                 .addComponent(barraVerificacionRoja, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(2, 2, 2)
@@ -234,7 +246,9 @@ public class Register extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelDatosRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mostrarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtRepetirContraseñaa, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -364,6 +378,7 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel lbTituloDatos;
     private javax.swing.JLabel lbTituloLogin;
     private javax.swing.JLabel lbTituloLogin2;
+    public javax.swing.JCheckBox mostrarContraseña;
     private javax.swing.JPanel panelDatosRegistro;
     private javax.swing.JPanel panelDiseñoRegistro;
     public javax.swing.JPasswordField txtContraseña;

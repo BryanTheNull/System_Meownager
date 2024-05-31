@@ -3,6 +3,7 @@ package View.EntrySystem;
 import Controller.EntrySystem.LoginController;
 import java.awt.Color;
 
+
 public class Login extends javax.swing.JFrame {
 
     private LoginController controller;
@@ -14,11 +15,10 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         controller = new LoginController(this);
         txtContraseña.setEchoChar((char) 0);
-        
-
-
-
+       
     }
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -31,6 +31,7 @@ public class Login extends javax.swing.JFrame {
         txtContraseña = new javax.swing.JPasswordField();
         lbRecuperarContraseña = new javax.swing.JLabel();
         btnIniciarSesiónPrincipal = new javax.swing.JButton();
+        mostrarContraseña = new javax.swing.JCheckBox();
         panelDiseñoLogin = new javax.swing.JPanel();
         lbTituloLogin = new javax.swing.JLabel();
         lbTituloLogin1 = new javax.swing.JLabel();
@@ -52,11 +53,12 @@ public class Login extends javax.swing.JFrame {
         panelDatosLogin.setPreferredSize(new java.awt.Dimension(700, 700));
         panelDatosLogin.setRequestFocusEnabled(false);
 
-        lbTituloDatos.setFont(new java.awt.Font("SansSerif", 1, 30)); // NOI18N
-        lbTituloDatos.setForeground(new java.awt.Color(0, 0, 204));
+        lbTituloDatos.setFont(new java.awt.Font("Roboto Black", 1, 30)); // NOI18N
+        lbTituloDatos.setForeground(new java.awt.Color(14, 125, 128));
         lbTituloDatos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbTituloDatos.setText("Iniciar Sesión");
+        lbTituloDatos.setText("INICIAR SESIÓN");
 
+        txtEmail.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(153, 153, 153));
         txtEmail.setText("Email");
         txtEmail.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -76,6 +78,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        txtContraseña.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         txtContraseña.setForeground(new java.awt.Color(153, 153, 153));
         txtContraseña.setText("Contraseña");
         txtContraseña.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -95,6 +98,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        lbRecuperarContraseña.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         lbRecuperarContraseña.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbRecuperarContraseña.setText("¿Olvidaste tu contraseña?");
         lbRecuperarContraseña.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -110,11 +114,15 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        btnIniciarSesiónPrincipal.setBackground(new java.awt.Color(66, 183, 42));
+        btnIniciarSesiónPrincipal.setBackground(new java.awt.Color(0, 127, 213));
         btnIniciarSesiónPrincipal.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         btnIniciarSesiónPrincipal.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesiónPrincipal.setText("Ingresar");
         btnIniciarSesiónPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        mostrarContraseña.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        mostrarContraseña.setBorder(null);
+        mostrarContraseña.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout panelDatosLoginLayout = new javax.swing.GroupLayout(panelDatosLogin);
         panelDatosLogin.setLayout(panelDatosLoginLayout);
@@ -128,15 +136,17 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(panelDatosLoginLayout.createSequentialGroup()
                         .addGap(150, 150, 150)
                         .addGroup(panelDatosLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelDatosLoginLayout.createSequentialGroup()
+                                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mostrarContraseña))))
                     .addGroup(panelDatosLoginLayout.createSequentialGroup()
                         .addGap(250, 250, 250)
-                        .addComponent(btnIniciarSesiónPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelDatosLoginLayout.createSequentialGroup()
-                        .addGap(270, 270, 270)
-                        .addComponent(lbRecuperarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(150, 150, 150))
+                        .addGroup(panelDatosLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnIniciarSesiónPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(lbRecuperarContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(81, 81, 81))
         );
         panelDatosLoginLayout.setVerticalGroup(
             panelDatosLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,36 +156,39 @@ public class Login extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelDatosLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(mostrarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(lbRecuperarContraseña)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnIniciarSesiónPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(272, Short.MAX_VALUE))
         );
 
         background.add(panelDatosLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 700));
 
-        panelDiseñoLogin.setBackground(new java.awt.Color(13, 71, 160));
+        panelDiseñoLogin.setBackground(new java.awt.Color(14, 125, 128));
         panelDiseñoLogin.setMaximumSize(new java.awt.Dimension(500, 700));
         panelDiseñoLogin.setMinimumSize(new java.awt.Dimension(500, 700));
+        panelDiseñoLogin.setPreferredSize(new java.awt.Dimension(500, 700));
 
-        lbTituloLogin.setFont(new java.awt.Font("SansSerif", 1, 30)); // NOI18N
+        lbTituloLogin.setFont(new java.awt.Font("Roboto Black", 1, 30)); // NOI18N
         lbTituloLogin.setForeground(new java.awt.Color(255, 255, 255));
         lbTituloLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbTituloLogin.setText("Bienvenido!");
+        lbTituloLogin.setText("BIENVENIDO");
 
-        lbTituloLogin1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lbTituloLogin1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lbTituloLogin1.setForeground(new java.awt.Color(255, 255, 255));
         lbTituloLogin1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbTituloLogin1.setText(" ¿Es tu primera vez aquí? ");
 
-        lbTituloLogin2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lbTituloLogin2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lbTituloLogin2.setForeground(new java.awt.Color(255, 255, 255));
         lbTituloLogin2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbTituloLogin2.setText("Regístrate y comienza a utilizar Meownager.");
 
-        btnRegistraseSecundario.setBackground(new java.awt.Color(66, 183, 42));
+        btnRegistraseSecundario.setBackground(new java.awt.Color(0, 196, 160));
         btnRegistraseSecundario.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         btnRegistraseSecundario.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistraseSecundario.setText("Registrarse");
@@ -186,17 +199,17 @@ public class Login extends javax.swing.JFrame {
         panelDiseñoLoginLayout.setHorizontalGroup(
             panelDiseñoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelDiseñoLoginLayout.createSequentialGroup()
-                .addContainerGap(96, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(panelDiseñoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDiseñoLoginLayout.createSequentialGroup()
                         .addGroup(panelDiseñoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lbTituloLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbTituloLogin2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbTituloLogin1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(lbTituloLogin1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lbTituloLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(96, 96, 96))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDiseñoLoginLayout.createSequentialGroup()
                         .addComponent(btnRegistraseSecundario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(132, 132, 132))))
+                        .addGap(125, 125, 125))))
         );
         panelDiseñoLoginLayout.setVerticalGroup(
             panelDiseñoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,9 +220,9 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(lbTituloLogin1)
                 .addGap(0, 0, 0)
                 .addComponent(lbTituloLogin2)
-                .addGap(70, 70, 70)
+                .addGap(96, 96, 96)
                 .addComponent(btnRegistraseSecundario, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(264, 264, 264))
+                .addGap(275, 275, 275))
         );
 
         background.add(panelDiseñoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 500, 700));
@@ -310,6 +323,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel lbTituloLogin;
     private javax.swing.JLabel lbTituloLogin1;
     private javax.swing.JLabel lbTituloLogin2;
+    public javax.swing.JCheckBox mostrarContraseña;
     private javax.swing.JPanel panelDatosLogin;
     private javax.swing.JPanel panelDiseñoLogin;
     public javax.swing.JPasswordField txtContraseña;
