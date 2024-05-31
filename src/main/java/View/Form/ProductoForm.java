@@ -104,11 +104,13 @@ public class ProductoForm extends javax.swing.JDialog {
         jLabelCategoria.setText("Categoria");
 
         jComboBoxCategoria.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jComboBoxCategoria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel3.setText("Proveedor");
 
         jComboBoxProveedor.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jComboBoxProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabelNombre.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabelNombre.setText("Nombre");
@@ -139,6 +141,7 @@ public class ProductoForm extends javax.swing.JDialog {
 
         jSpinnerPrecio.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jSpinnerPrecio.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jSpinnerPrecio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jSpinnerPrecio.setMaximumSize(new java.awt.Dimension(250, 25));
         jSpinnerPrecio.setMinimumSize(new java.awt.Dimension(250, 25));
         jSpinnerPrecio.setPreferredSize(new java.awt.Dimension(250, 25));
@@ -148,6 +151,7 @@ public class ProductoForm extends javax.swing.JDialog {
 
         jSpinnerStock.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jSpinnerStock.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jSpinnerStock.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jSpinnerStock.setMaximumSize(new java.awt.Dimension(250, 25));
         jSpinnerStock.setMinimumSize(new java.awt.Dimension(250, 25));
         jSpinnerStock.setPreferredSize(new java.awt.Dimension(250, 25));
@@ -156,6 +160,7 @@ public class ProductoForm extends javax.swing.JDialog {
         btnProducto.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
         btnProducto.setForeground(new java.awt.Color(255, 255, 255));
         btnProducto.setText("Agregar Producto");
+        btnProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
