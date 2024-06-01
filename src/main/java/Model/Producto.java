@@ -11,7 +11,7 @@ public class Producto {
     private String Nombre_Producto;
     private String Descripcion;
     private String Codigo;
-    private double Precio;
+    private int Precio;
     private int Stock;
 
     // Constructor vacio
@@ -19,7 +19,7 @@ public class Producto {
     }
 
     // Constructor 
-    public Producto(int ID_Producto, String Nombre_Proveedor, int ID_Proveedor, String Nombre_Categoria, int ID_Categoria, String Nombre_Producto, String Descripcion, String Codigo, double Precio, int Stock) {
+    public Producto(int ID_Producto, String Nombre_Proveedor, int ID_Proveedor, String Nombre_Categoria, int ID_Categoria, String Nombre_Producto, String Descripcion, String Codigo, int Precio, int Stock) {
         this.ID_Producto = ID_Producto;
         this.Nombre_Proveedor = Nombre_Proveedor;
         this.ID_Proveedor = ID_Proveedor;
@@ -97,11 +97,11 @@ public class Producto {
         this.Codigo = Codigo;
     }
 
-    public double getPrecio() {
+    public int getPrecio() {
         return Precio;
     }
 
-    public void setPrecio(double Precio) {
+    public void setPrecio(int Precio) {
         this.Precio = Precio;
     }
 

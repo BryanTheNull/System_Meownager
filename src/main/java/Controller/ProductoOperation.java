@@ -41,7 +41,7 @@ public class ProductoOperation {
                 p.setNombre_Producto(rs.getString(4));
                 p.setDescripcion(rs.getString(5));
                 p.setCodigo(rs.getString(6));
-                p.setPrecio(rs.getDouble(7));
+                p.setPrecio(rs.getInt(7));
                 p.setStock(rs.getInt(8));
                 DatosProductos.add(p);
             }
@@ -111,11 +111,8 @@ public class ProductoOperation {
             ps.setString(3, producto.getNombre_Producto());
             ps.setString(4, producto.getDescripcion());
             ps.setString(5, producto.getCodigo());
-            ps.setDouble(6, producto.getPrecio());
+            ps.setInt(6, producto.getPrecio());
             ps.setInt(7, producto.getStock());
-
-            // Imprimir la consulta SQL con sus valores para realizar seguimiento
-            System.out.println("Consulta SQL con valores:"+ps.toString());
 
             r = ps.executeUpdate();
             if (r == 1) {
@@ -128,4 +125,55 @@ public class ProductoOperation {
         }
         return r;
     }
+
+    public int SQL_EliminarProducto(int ID_Producto) {
+        int r = 0;
+        String sql = "DELETE FROM Productos WHERE ID_Producto=?";
+        try {
+            con = dbConnection.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, ID_Producto);
+            r = ps.executeUpdate();
+
+            if (r == 1) {
+                return 1;
+            } else {
+                return 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return r;
+    }
+
+    public int SQL_ActualizarProducto(Producto producto) {
+        int r = 0;
+        String sql = "UPDATE Productos SET ID_Proveedor =?, ID_Categoria=?, Nombre=?, Descripcion=?,"
+                + "Codigo_Producto=?, Precio=?, Stock=? WHERE ID_Producto=?";
+        try {
+            con = dbConnection.getConnection();
+            ps = con.prepareStatement(sql);
+
+            ps.setInt(1, producto.getID_Proveedor());
+            ps.setInt(2, producto.getID_Categoria());
+            ps.setString(3, producto.getNombre_Producto());
+            ps.setString(4, producto.getDescripcion());
+            ps.setString(5, producto.getCodigo());
+            ps.setInt(6, producto.getPrecio());
+            ps.setInt(7, producto.getStock());
+            ps.setInt(8, producto.getID_Producto());
+
+            r = ps.executeUpdate();
+            if (r == 1) {
+                return 1;
+            } else {
+                return 0;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return r;
+    }
+
 }

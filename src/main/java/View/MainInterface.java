@@ -36,7 +36,9 @@ public class MainInterface extends javax.swing.JFrame {
     }
     
     
-    
+    public void FormatearValor(){
+        
+    }
     
     
     
