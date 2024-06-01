@@ -30,20 +30,20 @@ public class LoginController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == login.btnIniciarSesiónPrincipal) {
-            // Verificar campos de texto y datos ingresados
-            if (!validarCamposLogin()) {
-                return;
-            }
-
-            // Verificar que el correo ingresado exista
-            if (!verificarExistenciaEmail()) {
-                return;
-            }
-
-            // Verificar si la contraseña existe
-            if (verificarContraseñaAcceso()) {
+//            // Verificar campos de texto y datos ingresados
+//            if (!validarCamposLogin()) {
+//                return;
+//            }
+//
+//            // Verificar que el correo ingresado exista
+//            if (!verificarExistenciaEmail()) {
+//                return;
+//            }
+//
+//            // Verificar si la contraseña existe
+//            if (verificarContraseñaAcceso()) {
                 accederSistema();
-            }
+//            }
         }
 
         if (e.getSource() == login.btnRegistraseSecundario) {
