@@ -2,7 +2,6 @@ package View.Paneles;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.regex.Pattern;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
@@ -20,6 +19,7 @@ public class PanelProductos extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
         backgound = new javax.swing.JPanel();
         txtMensaje = new javax.swing.JLabel();
         panelBarraSuperior = new javax.swing.JPanel();
@@ -28,12 +28,12 @@ public class PanelProductos extends javax.swing.JPanel {
         jComboBoxFiltrarPor = new javax.swing.JComboBox<>();
         txtInformacion2 = new javax.swing.JLabel();
         txtBuscador = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTableProductos = new javax.swing.JTable();
         btnAgregarProducto = new javax.swing.JButton();
         btnEliminarProducto = new javax.swing.JButton();
         btnModificarProducto = new javax.swing.JButton();
         btnActualizarPagina = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableProductos = new javax.swing.JTable();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -42,6 +42,19 @@ public class PanelProductos extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jList1);
 
+        jInternalFrame1.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
         setMaximumSize(new java.awt.Dimension(950, 700));
         setMinimumSize(new java.awt.Dimension(950, 700));
         setPreferredSize(new java.awt.Dimension(950, 700));
@@ -49,6 +62,8 @@ public class PanelProductos extends javax.swing.JPanel {
         backgound.setBackground(new java.awt.Color(250, 251, 253));
         backgound.setMaximumSize(new java.awt.Dimension(950, 700));
         backgound.setMinimumSize(new java.awt.Dimension(950, 700));
+        backgound.setPreferredSize(new java.awt.Dimension(950, 700));
+        backgound.setRequestFocusEnabled(false);
 
         txtMensaje.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         txtMensaje.setText("Bienvenido a tu sistema favorito ♥");
@@ -117,9 +132,29 @@ public class PanelProductos extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        btnAgregarProducto.setBackground(new java.awt.Color(14, 207, 181));
+        btnAgregarProducto.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
+        btnAgregarProducto.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregarProducto.setText("Agregar Producto");
+
+        btnEliminarProducto.setBackground(new java.awt.Color(14, 207, 181));
+        btnEliminarProducto.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
+        btnEliminarProducto.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminarProducto.setText("Eliminar Producto");
+
+        btnModificarProducto.setBackground(new java.awt.Color(14, 207, 181));
+        btnModificarProducto.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
+        btnModificarProducto.setForeground(new java.awt.Color(255, 255, 255));
+        btnModificarProducto.setText("Modificar Producto");
+
+        btnActualizarPagina.setBackground(new java.awt.Color(14, 207, 181));
+        btnActualizarPagina.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
+        btnActualizarPagina.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizarPagina.setText("Actualizar Pagina");
+
         jScrollPane2.setBorder(null);
 
-        jTableProductos.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jTableProductos.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTableProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -149,26 +184,6 @@ public class PanelProductos extends javax.swing.JPanel {
             jTableProductos.getColumnModel().getColumn(7).setResizable(false);
         }
 
-        btnAgregarProducto.setBackground(new java.awt.Color(14, 207, 181));
-        btnAgregarProducto.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
-        btnAgregarProducto.setForeground(new java.awt.Color(255, 255, 255));
-        btnAgregarProducto.setText("Agregar Producto");
-
-        btnEliminarProducto.setBackground(new java.awt.Color(14, 207, 181));
-        btnEliminarProducto.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
-        btnEliminarProducto.setForeground(new java.awt.Color(255, 255, 255));
-        btnEliminarProducto.setText("Eliminar Producto");
-
-        btnModificarProducto.setBackground(new java.awt.Color(14, 207, 181));
-        btnModificarProducto.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
-        btnModificarProducto.setForeground(new java.awt.Color(255, 255, 255));
-        btnModificarProducto.setText("Modificar Producto");
-
-        btnActualizarPagina.setBackground(new java.awt.Color(14, 207, 181));
-        btnActualizarPagina.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
-        btnActualizarPagina.setForeground(new java.awt.Color(255, 255, 255));
-        btnActualizarPagina.setText("Actualizar Pagina");
-
         javax.swing.GroupLayout backgoundLayout = new javax.swing.GroupLayout(backgound);
         backgound.setLayout(backgoundLayout);
         backgoundLayout.setHorizontalGroup(
@@ -179,7 +194,7 @@ public class PanelProductos extends javax.swing.JPanel {
                     .addGroup(backgoundLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(backgoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 920, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 920, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(backgoundLayout.createSequentialGroup()
                         .addGap(54, 54, 54)
@@ -205,9 +220,9 @@ public class PanelProductos extends javax.swing.JPanel {
                     .addComponent(btnEliminarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnModificarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnActualizarPagina, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -218,9 +233,7 @@ public class PanelProductos extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(backgound, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(backgound, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -266,7 +279,7 @@ public class PanelProductos extends javax.swing.JPanel {
             public void keyReleased(KeyEvent ke) {
                 TableRowSorter<DefaultTableModel> trs = new TableRowSorter<>((DefaultTableModel) jTableProductos.getModel());
                 jTableProductos.setRowSorter(trs);
-                trs.setRowFilter(RowFilter.regexFilter(txtBuscador.getText(), columnaIndice));
+                trs.setRowFilter(RowFilter.regexFilter("(?i)^"+txtBuscador.getText(), columnaIndice));
             }
 
         });
@@ -279,6 +292,7 @@ public class PanelProductos extends javax.swing.JPanel {
     public javax.swing.JButton btnEliminarProducto;
     public javax.swing.JButton btnModificarProducto;
     private javax.swing.JComboBox<String> jComboBoxFiltrarPor;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

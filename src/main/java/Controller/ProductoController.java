@@ -18,7 +18,6 @@ public class ProductoController implements ActionListener {
     private PanelProductos panelProductos;
     private ProductoForm productoForm;
     private Frame MainInterface;
-    private boolean estadoBtnProducto = true;
 
     // Instaciar clases a utilizar
     ProductoOperation productoOp = new ProductoOperation();
@@ -32,23 +31,25 @@ public class ProductoController implements ActionListener {
         this.panelProductos.btnEliminarProducto.addActionListener(this);
         this.panelProductos.btnModificarProducto.addActionListener(this);
         this.panelProductos.btnActualizarPagina.addActionListener(this);
-        this.productoForm.btnProducto.addActionListener(this);
+        this.productoForm.btnProveedor.addActionListener(this);
 
         consultarProductos(panelProductos.jTableProductos);
 
+        
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == panelProductos.btnAgregarProducto) {
-            estadoBtnProducto = true;
+            limpiarFormulario();
+            productoForm.btnProveedor.setText("Añadir Producto");
             cargarNombresProveedores();
             cargarNombresCategorias();
             productoForm.setVisible(true);
 
         }
         if (e.getSource() == panelProductos.btnModificarProducto) {
-            estadoBtnProducto = false;
+            productoForm.btnProveedor.setText("Guardar Producto");
             cargarNombresProveedores();
             cargarNombresCategorias();
             modificarProducto();
@@ -59,8 +60,9 @@ public class ProductoController implements ActionListener {
         if (e.getSource() == panelProductos.btnActualizarPagina) {
             consultarProductos(panelProductos.jTableProductos);
         }
-        if (e.getSource() == productoForm.btnProducto) {
-            if (estadoBtnProducto) {
+        if (e.getSource() == productoForm.btnProveedor) {
+            String boton = productoForm.btnProveedor.getText();
+            if (boton.equals("Añadir Producto")){
                 if (!validarCamposProducto()) {
                     return;
                 }
@@ -177,7 +179,10 @@ public class ProductoController implements ActionListener {
         }
 
         // Validar precio
+        // ...
         // Validar Stock
+        // ...
+        
         return true;
     }
 
@@ -260,7 +265,6 @@ public class ProductoController implements ActionListener {
 
             // ABRIR EL FORMULARIO
             productoForm.setVisible(true);
-            productoForm.btnProducto.setText("Guardar Cambios");
         }
     }
 
@@ -269,11 +273,9 @@ public class ProductoController implements ActionListener {
         int ID_Producto = Integer.parseInt(productoForm.txtIdProducto.getText());
         String nombreProveedor = (String) productoForm.jComboBoxProveedor.getSelectedItem();
         int ID_Proveedor = productoOp.SQL_ConsultarID("ID_Proveedor", "SELECT ID_Proveedor FROM Proveedores WHERE Nombre = '" + nombreProveedor + "'");
-        System.out.println("ID SEECCIOANDA:" + ID_Proveedor);
 
         String nombreCategoria = (String) productoForm.jComboBoxCategoria.getSelectedItem();
         int ID_Categoria = productoOp.SQL_ConsultarID("ID_Categoria", "SELECT ID_Categoria FROM Categorias WHERE Nombre = '" + nombreCategoria + "'");
-        System.out.println("ID SEECCIOANDA:" + ID_Categoria);
 
         String nombre = productoForm.txtNombre.getText();
         String descripcion = productoForm.txtDescripcion.getText();
@@ -297,8 +299,17 @@ public class ProductoController implements ActionListener {
             consultarProductos(panelProductos.jTableProductos);
             productoForm.dispose();
         } else {
-            JOptionPane.showMessageDialog(panelProductos, "Se ha producido un error al intentar actualizar el producto.", "Error al actualziar producto", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(panelProductos, "Se ha producido un error al intentar actualizar el producto.", "Error al actualizar producto", JOptionPane.ERROR_MESSAGE);
         }
+    }
+    
+    private void limpiarFormulario(){
+        productoForm.txtIdProducto.setText("");
+        productoForm.txtNombre.setText("");
+        productoForm.txtDescripcion.setText("");
+        productoForm.txtCodigo.setText("");
+        productoForm.txtPrecio.setText("");
+        productoForm.jSpinnerStock.setValue(0);
     }
 
 }

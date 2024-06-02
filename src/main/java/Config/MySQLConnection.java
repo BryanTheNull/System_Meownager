@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class MySQLConnection {
     // Datos para establecer la conexion.
-    private static final String IP = "127.0.0.1";
+    private static final String IP = "127.0.0.0";
     private static final String BD = "Meownager";
     private static final String URL = "jdbc:mysql://" + IP + ":3306/" + BD;
     private static final String USER = "root";

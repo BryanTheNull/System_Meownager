@@ -1,24 +1,41 @@
 package View;
 
+import Controller.CategoriaController;
+import Controller.ClienteController;
 import Controller.InicioController;
 import Controller.ProductoController;
+import Controller.ProveedorController;
+import View.EntrySystem.Login;
+import View.Paneles.PanelCategorias;
+import View.Paneles.PanelClientes;
 import View.Paneles.PanelInicio;
 import View.Paneles.PanelProductos;
+import View.Paneles.PanelProveedores;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import javax.swing.JPanel;
 
-
 public class MainInterface extends javax.swing.JFrame {
+
     private MainInterface mainInterface;
-    
-    
+
     // Crear instancias de interfazes para manejar ventanas.
     PanelInicio panelInicio = new PanelInicio();
     InicioController inicioController = new InicioController(panelInicio);
-    
+
     PanelProductos panelProductos = new PanelProductos();
     ProductoController productosController = new ProductoController(panelProductos);
-            
+
+    PanelCategorias panelCategorias = new PanelCategorias();
+    CategoriaController categoriaController = new CategoriaController(panelCategorias);
+    
+    
+    PanelClientes panelClientes = new PanelClientes();
+    ClienteController clienteController = new ClienteController(panelClientes);
+    
+    PanelProveedores panelProveedores = new PanelProveedores();
+    ProveedorController proveedorController = new ProveedorController(panelProveedores);
+
     public MainInterface() {
         initComponents();
         ShowPanel(panelInicio);
@@ -34,25 +51,7 @@ public class MainInterface extends javax.swing.JFrame {
         panelChanging.repaint();
 
     }
-    
-    
-    public void FormatearValor(){
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -96,6 +95,7 @@ public class MainInterface extends javax.swing.JFrame {
         Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelBarraNavegacion.setBackground(new java.awt.Color(14, 125, 128));
+        panelBarraNavegacion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         panelBarraNavegacion.setMaximumSize(null);
         panelBarraNavegacion.setMinimumSize(new java.awt.Dimension(250, 700));
         panelBarraNavegacion.setName(""); // NOI18N
@@ -118,10 +118,17 @@ public class MainInterface extends javax.swing.JFrame {
         jLabelOperaciones.setForeground(new java.awt.Color(255, 255, 255));
         jLabelOperaciones.setText("Operaciones");
 
+        btnMenuPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMenuPrincipal.setMaximumSize(new java.awt.Dimension(250, 50));
         btnMenuPrincipal.setMinimumSize(new java.awt.Dimension(250, 50));
         btnMenuPrincipal.setOpaque(false);
         btnMenuPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnMenuPrincipalMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnMenuPrincipalMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnMenuPrincipalMousePressed(evt);
             }
@@ -150,10 +157,17 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
+        btnProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnProductos.setMaximumSize(new java.awt.Dimension(250, 50));
         btnProductos.setMinimumSize(new java.awt.Dimension(250, 50));
         btnProductos.setOpaque(false);
         btnProductos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnProductosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnProductosMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnProductosMousePressed(evt);
             }
@@ -182,10 +196,17 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
+        btnCategorias.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCategorias.setMaximumSize(new java.awt.Dimension(250, 50));
         btnCategorias.setMinimumSize(new java.awt.Dimension(250, 50));
         btnCategorias.setOpaque(false);
         btnCategorias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCategoriasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCategoriasMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnCategoriasMousePressed(evt);
             }
@@ -214,10 +235,17 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
+        btnClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnClientes.setMaximumSize(new java.awt.Dimension(250, 50));
         btnClientes.setMinimumSize(new java.awt.Dimension(250, 50));
         btnClientes.setOpaque(false);
         btnClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnClientesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnClientesMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnClientesMousePressed(evt);
             }
@@ -246,9 +274,21 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
+        btnProveedores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnProveedores.setMaximumSize(new java.awt.Dimension(250, 50));
         btnProveedores.setMinimumSize(new java.awt.Dimension(250, 50));
         btnProveedores.setOpaque(false);
+        btnProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnProveedoresMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnProveedoresMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnProveedoresMousePressed(evt);
+            }
+        });
 
         txtSalir5.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         txtSalir5.setForeground(new java.awt.Color(255, 255, 255));
@@ -277,9 +317,21 @@ public class MainInterface extends javax.swing.JFrame {
         jLabelAdministracion.setForeground(new java.awt.Color(255, 255, 255));
         jLabelAdministracion.setText("Administracion");
 
+        btnReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnReportes.setMaximumSize(new java.awt.Dimension(250, 50));
         btnReportes.setMinimumSize(new java.awt.Dimension(250, 50));
         btnReportes.setOpaque(false);
+        btnReportes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnReportesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnReportesMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnReportesMousePressed(evt);
+            }
+        });
 
         jLabelReportes.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         jLabelReportes.setForeground(new java.awt.Color(255, 255, 255));
@@ -304,9 +356,21 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
+        btnConfiguracion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConfiguracion.setMaximumSize(new java.awt.Dimension(250, 50));
         btnConfiguracion.setMinimumSize(new java.awt.Dimension(250, 50));
         btnConfiguracion.setOpaque(false);
+        btnConfiguracion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnConfiguracionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnConfiguracionMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnConfiguracionMousePressed(evt);
+            }
+        });
 
         jLabelConfiguracion.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         jLabelConfiguracion.setForeground(new java.awt.Color(255, 255, 255));
@@ -331,10 +395,22 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
+        btnCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCerrarSesion.setMaximumSize(new java.awt.Dimension(250, 50));
         btnCerrarSesion.setMinimumSize(new java.awt.Dimension(250, 50));
         btnCerrarSesion.setOpaque(false);
         btnCerrarSesion.setPreferredSize(new java.awt.Dimension(250, 50));
+        btnCerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCerrarSesionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCerrarSesionMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnCerrarSesionMousePressed(evt);
+            }
+        });
 
         jLabelCerrarSesion.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
         jLabelCerrarSesion.setForeground(new java.awt.Color(255, 255, 255));
@@ -471,13 +547,106 @@ public class MainInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProductosMousePressed
 
     private void btnCategoriasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMousePressed
-        
+        ShowPanel(panelCategorias);
     }//GEN-LAST:event_btnCategoriasMousePressed
 
+    private void btnProveedoresMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProveedoresMousePressed
+        ShowPanel(panelProveedores);
+    }//GEN-LAST:event_btnProveedoresMousePressed
+
+    private void btnReportesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReportesMousePressed
+
+    }//GEN-LAST:event_btnReportesMousePressed
+
+    private void btnConfiguracionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfiguracionMousePressed
+
+    }//GEN-LAST:event_btnConfiguracionMousePressed
+
+    private void btnCerrarSesionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarSesionMousePressed
+        this.dispose();
+        Login iniciarSesion = new Login();
+        iniciarSesion.setVisible(true);
+    }//GEN-LAST:event_btnCerrarSesionMousePressed
+
+    // EVENTOS PARA CUANDO ENTRA Y SALE EL MOUSE A EL BOTON CAMBAIR BACKGROUND
+    private void btnMenuPrincipalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuPrincipalMouseEntered
+        btnMenuPrincipal.setBackground(Color.decode("#0E8A88"));
+        btnMenuPrincipal.setOpaque(true);
+    }//GEN-LAST:event_btnMenuPrincipalMouseEntered
+
+    private void btnMenuPrincipalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuPrincipalMouseExited
+        btnMenuPrincipal.setBackground(Color.decode("#0E7D80"));
+    }//GEN-LAST:event_btnMenuPrincipalMouseExited
+
+    private void btnProductosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductosMouseEntered
+        btnProductos.setBackground(Color.decode("#0E8A88"));
+        btnProductos.setOpaque(true);
+    }//GEN-LAST:event_btnProductosMouseEntered
+
+    private void btnProductosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductosMouseExited
+        btnProductos.setBackground(Color.decode("#0E7D80"));
+    }//GEN-LAST:event_btnProductosMouseExited
+
+    private void btnCategoriasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMouseEntered
+        btnCategorias.setBackground(Color.decode("#0E8A88"));
+        btnCategorias.setOpaque(true);
+    }//GEN-LAST:event_btnCategoriasMouseEntered
+
+    private void btnCategoriasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMouseExited
+        btnCategorias.setBackground(Color.decode("#0E7D80"));
+    }//GEN-LAST:event_btnCategoriasMouseExited
+
+    private void btnClientesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMouseEntered
+        btnClientes.setBackground(Color.decode("#0E8A88"));
+        btnClientes.setOpaque(true);
+    }//GEN-LAST:event_btnClientesMouseEntered
+
+    private void btnClientesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMouseExited
+        btnClientes.setBackground(Color.decode("#0E7D80"));
+    }//GEN-LAST:event_btnClientesMouseExited
+
+    private void btnProveedoresMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProveedoresMouseEntered
+        btnProveedores.setBackground(Color.decode("#0E8A88"));
+        btnProveedores.setOpaque(true);
+    }//GEN-LAST:event_btnProveedoresMouseEntered
+
+    private void btnProveedoresMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProveedoresMouseExited
+        btnProveedores.setBackground(Color.decode("#0E7D80"));
+    }//GEN-LAST:event_btnProveedoresMouseExited
+
+    private void btnReportesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReportesMouseEntered
+        btnReportes.setBackground(Color.decode("#0E8A88"));
+        btnReportes.setOpaque(true);
+    }//GEN-LAST:event_btnReportesMouseEntered
+
+    private void btnReportesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReportesMouseExited
+        btnReportes.setBackground(Color.decode("#0E7D80"));
+    }//GEN-LAST:event_btnReportesMouseExited
+
+    private void btnConfiguracionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfiguracionMouseEntered
+        btnConfiguracion.setBackground(Color.decode("#0E8A88"));
+        btnConfiguracion.setOpaque(true);
+    }//GEN-LAST:event_btnConfiguracionMouseEntered
+
+    private void btnConfiguracionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfiguracionMouseExited
+        btnConfiguracion.setBackground(Color.decode("#0E7D80"));
+    }//GEN-LAST:event_btnConfiguracionMouseExited
+
+    private void btnCerrarSesionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarSesionMouseEntered
+        btnCerrarSesion.setBackground(Color.decode("#0E8A88"));
+        btnCerrarSesion.setOpaque(true);
+    }//GEN-LAST:event_btnCerrarSesionMouseEntered
+
+    private void btnCerrarSesionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarSesionMouseExited
+        btnCerrarSesion.setBackground(Color.decode("#0E7D80"));
+    }//GEN-LAST:event_btnCerrarSesionMouseExited
+
     private void btnClientesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMousePressed
-        
+        ShowPanel(panelClientes);
     }//GEN-LAST:event_btnClientesMousePressed
 
+
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
     private javax.swing.JPanel btnCategorias;

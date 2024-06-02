@@ -29,6 +29,7 @@ public class Register extends javax.swing.JFrame {
         lbSubTitulo = new javax.swing.JLabel();
         lbTituloLogin2 = new javax.swing.JLabel();
         btnIniciarSesiónSecundario = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         panelDatosRegistro = new javax.swing.JPanel();
         lbTituloDatos = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
@@ -51,7 +52,6 @@ public class Register extends javax.swing.JFrame {
         background.setMaximumSize(new java.awt.Dimension(1200, 700));
         background.setMinimumSize(new java.awt.Dimension(1200, 700));
         background.setPreferredSize(new java.awt.Dimension(1200, 700));
-        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelDiseñoRegistro.setBackground(new java.awt.Color(14, 125, 128));
         panelDiseñoRegistro.setMaximumSize(new java.awt.Dimension(500, 700));
@@ -73,7 +73,7 @@ public class Register extends javax.swing.JFrame {
         lbTituloLogin2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbTituloLogin2.setText("Inicia Sesión y comienza a utilizar Meownager.");
 
-        btnIniciarSesiónSecundario.setBackground(new java.awt.Color(66, 183, 42));
+        btnIniciarSesiónSecundario.setBackground(new java.awt.Color(14, 207, 181));
         btnIniciarSesiónSecundario.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         btnIniciarSesiónSecundario.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesiónSecundario.setText("Iniciar Sesión");
@@ -84,20 +84,20 @@ public class Register extends javax.swing.JFrame {
         panelDiseñoRegistroLayout.setHorizontalGroup(
             panelDiseñoRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelDiseñoRegistroLayout.createSequentialGroup()
-                .addGap(100, 100, 100)
+                .addContainerGap(50, Short.MAX_VALUE)
                 .addGroup(panelDiseñoRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDiseñoRegistroLayout.createSequentialGroup()
-                        .addGap(0, 58, Short.MAX_VALUE)
-                        .addComponent(btnIniciarSesiónSecundario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(142, 142, 142))
-                    .addGroup(panelDiseñoRegistroLayout.createSequentialGroup()
-                        .addGroup(panelDiseñoRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lbSubTitulo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbTituloLogin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(lbTituloLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbTituloLogin2, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(39, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDiseñoRegistroLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbTituloLogin2, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnIniciarSesiónSecundario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(150, 150, 150))
+            .addGroup(panelDiseñoRegistroLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addGroup(panelDiseñoRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lbSubTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelDiseñoRegistroLayout.setVerticalGroup(
@@ -105,16 +105,16 @@ public class Register extends javax.swing.JFrame {
             .addGroup(panelDiseñoRegistroLayout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addComponent(lbTituloLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbSubTitulo)
                 .addGap(0, 0, 0)
                 .addComponent(lbTituloLogin2)
-                .addGap(64, 64, 64)
+                .addGap(27, 27, 27)
                 .addComponent(btnIniciarSesiónSecundario, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(324, Short.MAX_VALUE))
+                .addGap(200, 200, 200))
         );
-
-        background.add(panelDiseñoRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 700));
 
         panelDatosRegistro.setBackground(new java.awt.Color(252, 252, 247));
         panelDatosRegistro.setMaximumSize(new java.awt.Dimension(700, 700));
@@ -186,7 +186,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
-        btnRegistrarsePrincipal.setBackground(new java.awt.Color(66, 183, 42));
+        btnRegistrarsePrincipal.setBackground(new java.awt.Color(14, 207, 181));
         btnRegistrarsePrincipal.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         btnRegistrarsePrincipal.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarsePrincipal.setText("Crear Cuenta");
@@ -206,12 +206,8 @@ public class Register extends javax.swing.JFrame {
         panelDatosRegistro.setLayout(panelDatosRegistroLayout);
         panelDatosRegistroLayout.setHorizontalGroup(
             panelDatosRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatosRegistroLayout.createSequentialGroup()
-                .addGap(200, 200, 200)
-                .addComponent(lbTituloDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(200, 200, 200))
             .addGroup(panelDatosRegistroLayout.createSequentialGroup()
-                .addGap(150, 150, 150)
+                .addGap(159, 159, 159)
                 .addGroup(panelDatosRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatosRegistroLayout.createSequentialGroup()
                         .addComponent(txtRepetirContraseñaa, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -219,49 +215,65 @@ public class Register extends javax.swing.JFrame {
                     .addGroup(panelDatosRegistroLayout.createSequentialGroup()
                         .addGroup(panelDatosRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelDatosRegistroLayout.createSequentialGroup()
-                                .addGroup(panelDatosRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                                    .addComponent(txtContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                                    .addGroup(panelDatosRegistroLayout.createSequentialGroup()
-                                        .addGap(99, 99, 99)
-                                        .addComponent(btnRegistrarsePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(mostrarContraseña))
-                            .addGroup(panelDatosRegistroLayout.createSequentialGroup()
                                 .addComponent(barraVerificacionRoja, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(2, 2, 2)
                                 .addComponent(barraVerificacionAmarillo, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(2, 2, 2)
-                                .addComponent(barraVerificacionVerde, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(barraVerificacionVerde, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelDatosRegistroLayout.createSequentialGroup()
+                                .addGroup(panelDatosRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lbTituloDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(panelDatosRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtNombre)
+                                        .addComponent(txtEmail)
+                                        .addComponent(txtContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mostrarContraseña)))
+                        .addGap(0, 121, Short.MAX_VALUE))))
+            .addGroup(panelDatosRegistroLayout.createSequentialGroup()
+                .addGap(250, 250, 250)
+                .addComponent(btnRegistrarsePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelDatosRegistroLayout.setVerticalGroup(
             panelDatosRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelDatosRegistroLayout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addComponent(lbTituloDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelDatosRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(mostrarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtRepetirContraseñaa, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelDatosRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(barraVerificacionRoja, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(barraVerificacionAmarillo, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(barraVerificacionVerde, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                .addGap(32, 32, 32)
                 .addComponent(btnRegistrarsePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(216, 216, 216))
+                .addGap(200, 200, 200))
         );
 
-        background.add(panelDatosRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 700, 700));
+        javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
+        background.setLayout(backgroundLayout);
+        backgroundLayout.setHorizontalGroup(
+            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addComponent(panelDiseñoRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(panelDatosRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        backgroundLayout.setVerticalGroup(
+            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelDiseñoRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panelDatosRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -374,6 +386,7 @@ public class Register extends javax.swing.JFrame {
     public javax.swing.JProgressBar barraVerificacionVerde;
     public javax.swing.JButton btnIniciarSesiónSecundario;
     public javax.swing.JButton btnRegistrarsePrincipal;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbSubTitulo;
     private javax.swing.JLabel lbTituloDatos;
     private javax.swing.JLabel lbTituloLogin;

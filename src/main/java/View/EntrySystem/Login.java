@@ -45,8 +45,6 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(1200, 700));
 
-        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         panelDatosLogin.setBackground(new java.awt.Color(252, 252, 247));
         panelDatosLogin.setMaximumSize(new java.awt.Dimension(700, 700));
         panelDatosLogin.setMinimumSize(new java.awt.Dimension(700, 700));
@@ -98,7 +96,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        lbRecuperarContraseña.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        lbRecuperarContraseña.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         lbRecuperarContraseña.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbRecuperarContraseña.setText("¿Olvidaste tu contraseña?");
         lbRecuperarContraseña.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -114,7 +112,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        btnIniciarSesiónPrincipal.setBackground(new java.awt.Color(0, 127, 213));
+        btnIniciarSesiónPrincipal.setBackground(new java.awt.Color(14, 207, 181));
         btnIniciarSesiónPrincipal.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         btnIniciarSesiónPrincipal.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesiónPrincipal.setText("Ingresar");
@@ -131,21 +129,20 @@ public class Login extends javax.swing.JFrame {
             .addGroup(panelDatosLoginLayout.createSequentialGroup()
                 .addGroup(panelDatosLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelDatosLoginLayout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addComponent(lbTituloDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelDatosLoginLayout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addGroup(panelDatosLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelDatosLoginLayout.createSequentialGroup()
-                                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(mostrarContraseña))))
-                    .addGroup(panelDatosLoginLayout.createSequentialGroup()
                         .addGap(250, 250, 250)
                         .addGroup(panelDatosLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnIniciarSesiónPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(lbRecuperarContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(btnIniciarSesiónPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lbRecuperarContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
+                    .addGroup(panelDatosLoginLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addGroup(panelDatosLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtEmail)
+                            .addComponent(txtContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(mostrarContraseña))
+                    .addGroup(panelDatosLoginLayout.createSequentialGroup()
+                        .addGap(200, 200, 200)
+                        .addComponent(lbTituloDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(81, 81, 81))
         );
         panelDatosLoginLayout.setVerticalGroup(
@@ -163,10 +160,8 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(lbRecuperarContraseña)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnIniciarSesiónPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(272, Short.MAX_VALUE))
+                .addContainerGap(274, Short.MAX_VALUE))
         );
-
-        background.add(panelDatosLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 700));
 
         panelDiseñoLogin.setBackground(new java.awt.Color(14, 125, 128));
         panelDiseñoLogin.setMaximumSize(new java.awt.Dimension(500, 700));
@@ -188,7 +183,7 @@ public class Login extends javax.swing.JFrame {
         lbTituloLogin2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbTituloLogin2.setText("Regístrate y comienza a utilizar Meownager.");
 
-        btnRegistraseSecundario.setBackground(new java.awt.Color(0, 196, 160));
+        btnRegistraseSecundario.setBackground(new java.awt.Color(14, 207, 181));
         btnRegistraseSecundario.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         btnRegistraseSecundario.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistraseSecundario.setText("Registrarse");
@@ -199,17 +194,19 @@ public class Login extends javax.swing.JFrame {
         panelDiseñoLoginLayout.setHorizontalGroup(
             panelDiseñoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelDiseñoLoginLayout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(panelDiseñoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDiseñoLoginLayout.createSequentialGroup()
+                    .addGroup(panelDiseñoLoginLayout.createSequentialGroup()
+                        .addGap(68, 68, 68)
                         .addGroup(panelDiseñoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(lbTituloLogin2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbTituloLogin1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbTituloLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(96, 96, 96))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDiseñoLoginLayout.createSequentialGroup()
-                        .addComponent(btnRegistraseSecundario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(125, 125, 125))))
+                            .addComponent(lbTituloLogin1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(panelDiseñoLoginLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(btnRegistraseSecundario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelDiseñoLoginLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(lbTituloLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(50, 50, 50))
         );
         panelDiseñoLoginLayout.setVerticalGroup(
             panelDiseñoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,7 +222,20 @@ public class Login extends javax.swing.JFrame {
                 .addGap(275, 275, 275))
         );
 
-        background.add(panelDiseñoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 500, 700));
+        javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
+        background.setLayout(backgroundLayout);
+        backgroundLayout.setHorizontalGroup(
+            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addComponent(panelDatosLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(panelDiseñoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        backgroundLayout.setVerticalGroup(
+            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelDatosLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panelDiseñoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
