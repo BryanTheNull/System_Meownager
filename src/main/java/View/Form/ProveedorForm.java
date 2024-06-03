@@ -32,7 +32,7 @@ public class ProveedorForm extends javax.swing.JDialog {
         decoracion13 = new javax.swing.JPanel();
         lbTituloGestionarProveedores = new javax.swing.JLabel();
         jLabelIdProveedor = new javax.swing.JLabel();
-        txtIdCliente = new javax.swing.JTextField();
+        txtIdProveedor = new javax.swing.JTextField();
         jLabelNombre = new javax.swing.JLabel();
         txtRut = new javax.swing.JTextField();
         jLabelApellido = new javax.swing.JLabel();
@@ -45,9 +45,10 @@ public class ProveedorForm extends javax.swing.JDialog {
         txtDireccion = new javax.swing.JTextField();
         jLabelEstado = new javax.swing.JLabel();
         jComboBoxEstado = new javax.swing.JComboBox<>();
-        btnCliente = new javax.swing.JButton();
+        btnProveedor = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Gestionar Proveedores");
         setLocationByPlatform(true);
         setMinimumSize(new java.awt.Dimension(600, 700));
 
@@ -88,11 +89,11 @@ public class ProveedorForm extends javax.swing.JDialog {
         jLabelIdProveedor.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabelIdProveedor.setText("ID Proveedor");
 
-        txtIdCliente.setEditable(false);
-        txtIdCliente.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        txtIdCliente.setMaximumSize(new java.awt.Dimension(250, 25));
-        txtIdCliente.setMinimumSize(new java.awt.Dimension(250, 25));
-        txtIdCliente.setPreferredSize(new java.awt.Dimension(250, 25));
+        txtIdProveedor.setEditable(false);
+        txtIdProveedor.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        txtIdProveedor.setMaximumSize(new java.awt.Dimension(250, 25));
+        txtIdProveedor.setMinimumSize(new java.awt.Dimension(250, 25));
+        txtIdProveedor.setPreferredSize(new java.awt.Dimension(250, 25));
 
         jLabelNombre.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabelNombre.setText("RUT");
@@ -140,10 +141,10 @@ public class ProveedorForm extends javax.swing.JDialog {
         jComboBoxEstado.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jComboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo", "Suspendido", "Bloqueado" }));
 
-        btnCliente.setBackground(new java.awt.Color(14, 207, 181));
-        btnCliente.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
-        btnCliente.setForeground(new java.awt.Color(255, 255, 255));
-        btnCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnProveedor.setBackground(new java.awt.Color(14, 207, 181));
+        btnProveedor.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
+        btnProveedor.setForeground(new java.awt.Color(255, 255, 255));
+        btnProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
@@ -183,12 +184,12 @@ public class ProveedorForm extends javax.swing.JDialog {
                                             .addComponent(jLabelIdProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtIdCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(txtIdProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(txtRut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(backgroundLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(170, 170, 170))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, backgroundLayout.createSequentialGroup()
                         .addGap(72, 72, 72)
@@ -207,7 +208,7 @@ public class ProveedorForm extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelIdProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtIdCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtIdProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -233,7 +234,7 @@ public class ProveedorForm extends javax.swing.JDialog {
                     .addComponent(jLabelEstado, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
                     .addComponent(jComboBoxEstado))
                 .addGap(50, 50, 50)
-                .addComponent(btnCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(159, 159, 159))
             .addComponent(decoracion13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -250,6 +251,7 @@ public class ProveedorForm extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -296,7 +298,7 @@ public class ProveedorForm extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
-    public javax.swing.JButton btnCliente;
+    public javax.swing.JButton btnProveedor;
     private javax.swing.JPanel decoracion1;
     private javax.swing.JPanel decoracion13;
     public javax.swing.JComboBox<String> jComboBoxEstado;
@@ -310,7 +312,7 @@ public class ProveedorForm extends javax.swing.JDialog {
     private javax.swing.JLabel lbTituloGestionarProveedores;
     public javax.swing.JTextField txtDireccion;
     public javax.swing.JTextField txtEmail;
-    public javax.swing.JTextField txtIdCliente;
+    public javax.swing.JTextField txtIdProveedor;
     public javax.swing.JTextField txtNombre;
     public javax.swing.JTextField txtRut;
     public javax.swing.JTextField txtTelefono;

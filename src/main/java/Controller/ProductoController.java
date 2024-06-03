@@ -35,7 +35,6 @@ public class ProductoController implements ActionListener {
 
         consultarProductos(panelProductos.jTableProductos);
 
-        
     }
 
     @Override
@@ -62,7 +61,7 @@ public class ProductoController implements ActionListener {
         }
         if (e.getSource() == productoForm.btnProveedor) {
             String boton = productoForm.btnProveedor.getText();
-            if (boton.equals("Añadir Producto")){
+            if (boton.equals("Añadir Producto")) {
                 if (!validarCamposProducto()) {
                     return;
                 }
@@ -182,7 +181,6 @@ public class ProductoController implements ActionListener {
         // ...
         // Validar Stock
         // ...
-        
         return true;
     }
 
@@ -234,7 +232,6 @@ public class ProductoController implements ActionListener {
             } else {
                 JOptionPane.showMessageDialog(panelProductos, "Se ha producido un error al intentar eliminar el producto.", "Error al elimianar producto", JOptionPane.ERROR_MESSAGE);
             }
-
         }
     }
 
@@ -302,8 +299,8 @@ public class ProductoController implements ActionListener {
             JOptionPane.showMessageDialog(panelProductos, "Se ha producido un error al intentar actualizar el producto.", "Error al actualizar producto", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
-    private void limpiarFormulario(){
+
+    private void limpiarFormulario() {
         productoForm.txtIdProducto.setText("");
         productoForm.txtNombre.setText("");
         productoForm.txtDescripcion.setText("");

@@ -215,8 +215,6 @@ public class ClienteController implements ActionListener {
         }
     }
     
-    
-
     private void limpiarFormulario() {
         clienteForm.txtIdCliente.setText("");
         clienteForm.txtNombre.setText("");
@@ -224,6 +222,6 @@ public class ClienteController implements ActionListener {
         clienteForm.txtEmail.setText("");
         clienteForm.txtTelefono.setText("");
         clienteForm.txtDireccion.setText("");
-        clienteForm.jComboBoxEstado.setSelectedItem(1);
+        clienteForm.jComboBoxEstado.setSelectedIndex(0);
     }
 }

@@ -131,11 +131,11 @@ public class PanelProveedores extends javax.swing.JPanel {
 
             },
             new String [] {
-                "N°", "Proveedor", "Categoria", "Nombre", "Descripcion", "Codigo", "Precio", "Stock"
+                "N° Proveedor", "Rut", "Nombre", "Email", "Teléfono", "Direccion", "Estado"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, true
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -143,6 +143,15 @@ public class PanelProveedores extends javax.swing.JPanel {
             }
         });
         jScrollPane.setViewportView(jTableProveedores);
+        if (jTableProveedores.getColumnModel().getColumnCount() > 0) {
+            jTableProveedores.getColumnModel().getColumn(0).setResizable(false);
+            jTableProveedores.getColumnModel().getColumn(1).setResizable(false);
+            jTableProveedores.getColumnModel().getColumn(2).setResizable(false);
+            jTableProveedores.getColumnModel().getColumn(3).setResizable(false);
+            jTableProveedores.getColumnModel().getColumn(4).setResizable(false);
+            jTableProveedores.getColumnModel().getColumn(5).setResizable(false);
+            jTableProveedores.getColumnModel().getColumn(6).setResizable(false);
+        }
 
         javax.swing.GroupLayout backgoundLayout = new javax.swing.GroupLayout(backgound);
         backgound.setLayout(backgoundLayout);
@@ -162,8 +171,8 @@ public class PanelProveedores extends javax.swing.JPanel {
                         .addGap(54, 54, 54)
                         .addComponent(btnEliminarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(54, 54, 54)
-                        .addComponent(btnModificarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)
+                        .addComponent(btnModificarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
                         .addComponent(btnActualizarPagina, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(15, 15, 15))
         );
