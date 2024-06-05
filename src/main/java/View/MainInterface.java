@@ -41,7 +41,7 @@ public class MainInterface extends javax.swing.JFrame {
         ShowPanel(panelInicio);
     }
 
-    private void ShowPanel(JPanel p) {
+    public void ShowPanel(JPanel p) {
         p.setSize(950, 700);
         p.setLocation(0, 0);
 

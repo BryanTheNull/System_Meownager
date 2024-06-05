@@ -14,7 +14,6 @@ import javax.swing.event.DocumentListener;
 public class RegisterController implements ActionListener, DocumentListener {
 
     private Register register;
-
     RegisterOperation registerOp = new RegisterOperation();
 
     public RegisterController(Register register) {
@@ -32,20 +31,18 @@ public class RegisterController implements ActionListener, DocumentListener {
     @Override   // Evento de Botones principales
     public void actionPerformed(ActionEvent e) {
         // Validar Campos de entrada de texto
-        if(e.getSource() == register.btnRegistrarsePrincipal){
-            if(!validarCamposRegister()){
+        if (e.getSource() == register.btnRegistrarsePrincipal) {
+            if (!validarCamposRegister()) {
                 return;
             }
-            if(!verificarCorreo()){
+            if (!verificarCorreo()) {
                 return;
             }
-            
+
             crearCuenta();
-            
-           
+
         }
-        
-        
+
 //
 //                        if (crearCuenta()) {
 //                            Login login = new Login();
@@ -55,17 +52,16 @@ public class RegisterController implements ActionListener, DocumentListener {
 //                            login.btnIniciarSesiónPrincipal.requestFocusInWindow();
 //                            login.setVisible(true);
 //                            register.dispose();
-
         if (e.getSource() == register.btnIniciarSesiónSecundario) {
             Login iniciarSesion = iniciarSesion();
             iniciarSesion.txtEmail.requestFocusInWindow();
         }
-        
-        if(e.getSource() == register.mostrarContraseña){
-            if(register.mostrarContraseña.isSelected()){
+
+        if (e.getSource() == register.mostrarContraseña) {
+            if (register.mostrarContraseña.isSelected()) {
                 register.txtContraseña.setEchoChar((char) 0);
                 register.txtRepetirContraseñaa.setEchoChar((char) 0);
-            } else{
+            } else {
                 register.txtContraseña.setEchoChar('*');
                 register.txtRepetirContraseñaa.setEchoChar('*');
             }
@@ -120,7 +116,6 @@ public class RegisterController implements ActionListener, DocumentListener {
     public void changedUpdate(DocumentEvent e) {
     }
 
-
     // Metodos para el funcionamento de Register
     private boolean validarCamposRegister() {
         String nombre = register.txtNombre.getText();
@@ -170,7 +165,7 @@ public class RegisterController implements ActionListener, DocumentListener {
         }
         return true;    // Si pasa todas las validaciones :)
     }
-    
+
     private Login iniciarSesion() {
         Login login = new Login();
         login.setVisible(true);
@@ -248,8 +243,6 @@ public class RegisterController implements ActionListener, DocumentListener {
         register.txtContraseña.setText("");
         register.txtRepetirContraseñaa.setText("");
     }
-
-    
 
     private boolean verificarFormatoCorreo(String v_Correo) {
         String regex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";

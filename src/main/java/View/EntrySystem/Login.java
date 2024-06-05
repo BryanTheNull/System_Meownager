@@ -118,7 +118,7 @@ public class Login extends javax.swing.JFrame {
         btnIniciarSesiónPrincipal.setText("Ingresar");
         btnIniciarSesiónPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        mostrarContraseña.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        mostrarContraseña.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         mostrarContraseña.setBorder(null);
         mostrarContraseña.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
