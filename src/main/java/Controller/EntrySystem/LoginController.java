@@ -1,11 +1,13 @@
 package Controller.EntrySystem;
 
+import Model.Usuario;
 import View.EntrySystem.Login;
 import View.EntrySystem.RecoverPassword;
 import View.EntrySystem.Register;
 import View.MainInterface;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -13,6 +15,7 @@ import javax.swing.JOptionPane;
 public class LoginController implements ActionListener {
 
     private Login login;
+    private String emailObtenido;
     private int intentosRealizados = 0;
     private static final int intentosMax = 3;
 
@@ -43,6 +46,7 @@ public class LoginController implements ActionListener {
 //            // Verificar si la contraseña existe
 //            if (verificarContraseñaAcceso()) {
                 accederSistema();
+                obtenerDatosUsuario();
 //            }
         }
 
@@ -63,6 +67,7 @@ public class LoginController implements ActionListener {
     // Metodos de Login
     private boolean validarCamposLogin() {
         String email = login.txtEmail.getText();
+        
         String contraseña = login.txtContraseña.getText();
 
         // Validar Contraseña en blanco
@@ -84,6 +89,7 @@ public class LoginController implements ActionListener {
         String emailIngresado = login.txtEmail.getText();
         int resultado = loginOp.SQL_VerificarExistenciaUsuario(emailIngresado);
         if (resultado == 1) {
+            emailObtenido = emailIngresado;
             return true;
         }
         int decision = JOptionPane.showConfirmDialog(login,
@@ -147,5 +153,15 @@ public class LoginController implements ActionListener {
         mainInterface.setVisible(true);
         login.dispose();
         return mainInterface;
+    }
+    
+    private void obtenerDatosUsuario(){
+        loginOp.SQL_ObtenerDatosUsuario(emailObtenido);
+        
+        // Imprir usuario
+//        System.out.println(Usuario.getInstance().getNombre());
+//        System.out.println(Usuario.getInstance().getApellido());
+//        System.out.println(Usuario.getInstance().getEmail());
+//        System.out.println(Usuario.getInstance().getRango());            
     }
 }

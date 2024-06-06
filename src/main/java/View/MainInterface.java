@@ -2,15 +2,19 @@ package View;
 
 import Controller.CategoriaController;
 import Controller.ClienteController;
+import Controller.ConfiguracionController;
 import Controller.InicioController;
 import Controller.ProductoController;
 import Controller.ProveedorController;
+import Controller.ReporteController;
 import View.EntrySystem.Login;
 import View.Paneles.PanelCategorias;
 import View.Paneles.PanelClientes;
+import View.Paneles.PanelConfiguraciones;
 import View.Paneles.PanelInicio;
 import View.Paneles.PanelProductos;
 import View.Paneles.PanelProveedores;
+import View.Paneles.PanelReportes;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JPanel;
@@ -35,6 +39,13 @@ public class MainInterface extends javax.swing.JFrame {
     
     PanelProveedores panelProveedores = new PanelProveedores();
     ProveedorController proveedorController = new ProveedorController(panelProveedores);
+    
+    PanelReportes panelReportes = new PanelReportes();
+    ReporteController reporteController = new ReporteController(panelReportes);
+    
+    PanelConfiguraciones panelConfiguraciones = new PanelConfiguraciones();
+    ConfiguracionController configuracionController = new ConfiguracionController(panelConfiguraciones);
+    
 
     public MainInterface() {
         initComponents();
@@ -555,11 +566,11 @@ public class MainInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProveedoresMousePressed
 
     private void btnReportesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReportesMousePressed
-
+        ShowPanel(panelReportes);
     }//GEN-LAST:event_btnReportesMousePressed
 
     private void btnConfiguracionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfiguracionMousePressed
-
+        ShowPanel(panelConfiguraciones);
     }//GEN-LAST:event_btnConfiguracionMousePressed
 
     private void btnCerrarSesionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarSesionMousePressed

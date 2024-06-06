@@ -34,7 +34,7 @@ public class PanelInicio extends javax.swing.JPanel {
 
         // Configurar el layout de backgound como BorderLayout
         backgound.setLayout(new BorderLayout());
-        
+         
         backgound.removeAll();
         backgound.add(p, BorderLayout.CENTER);
         backgound.revalidate();

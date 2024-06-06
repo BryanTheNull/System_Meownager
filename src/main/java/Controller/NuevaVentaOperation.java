@@ -117,7 +117,7 @@ public class NuevaVentaOperation {
         return Nro;
     }
     
-    public int SQL_InsertarVenta(int ID_Venta, int ID_Cliente, int Total){
+    public int SQL_InsertarVenta(int ID_Venta, int ID_Cliente, int Total) {
         int r = 0;
         String sql = "INSERT INTO Ventas(ID_Venta, ID_Cliente, Total) VALUES(?,?,?)";
         try {
@@ -126,16 +126,32 @@ public class NuevaVentaOperation {
             ps.setInt(1, ID_Venta);
             ps.setInt(2, ID_Cliente);
             ps.setInt(3, Total);
-            
+
             r = ps.executeUpdate();
             if (r == 1) {
                 return 1;
             } else {
                 return 0;
-            }       
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return r;
+    }
+    
+     public void SQL_InsertarDetalleVenta(int ID_Venta, int ID_Producto, int cantidad, int precio_Unitario){
+        String sql = "INSERT INTO DetalleVentas(ID_Venta, ID_Producto, Cantidad, Precio_Unitario) VALUES(?,?,?,?)";
+        try {
+            con = dbConnection.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, ID_Venta);
+            ps.setInt(2, ID_Producto);
+            ps.setInt(3, cantidad);
+            ps.setInt(3, precio_Unitario);
+            ps.executeUpdate();
+            System.out.println(ps.toString());
         } catch (SQLException e) {
             e.printStackTrace();
         }  
-        return r;
     }
 }

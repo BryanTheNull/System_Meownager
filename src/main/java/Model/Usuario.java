@@ -11,20 +11,19 @@ public class Usuario {
     private String Fecha_Registro;
     private String Rango;
 
+    // Instancia unica de singleton
+    private static Usuario instance;
+    
     // Constructor vacio
-    public Usuario() {
+    private Usuario() {
     }
     
-    // Constructor
-    public Usuario(int ID_Usuario, String Nombre, String Apellido, String Email, String Contraseña, String Celular, String Fecha_Registro, String Rango) {
-        this.ID_Usuario = ID_Usuario;
-        this.Nombre = Nombre;
-        this.Apellido = Apellido;
-        this.Email = Email;
-        this.Contraseña = Contraseña;
-        this.Celular = Celular;
-        this.Fecha_Registro = Fecha_Registro;
-        this.Rango = Rango;
+    // Método estático para obtener la instancia única
+    public static Usuario getInstance() {
+        if (instance == null) {
+            instance = new Usuario();
+        }
+        return instance;
     }
     
     // Getter and Setter
