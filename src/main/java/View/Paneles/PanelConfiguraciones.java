@@ -1,7 +1,12 @@
 package View.Paneles;
 
+import Controller.GestionarUsuarioController;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import javax.swing.JPanel;
 
 public class PanelConfiguraciones extends javax.swing.JPanel {
+
     private boolean limpiarNombre = false;
 
     public PanelConfiguraciones() {
@@ -16,21 +21,23 @@ public class PanelConfiguraciones extends javax.swing.JPanel {
         txtMensaje = new javax.swing.JLabel();
         panelBarraSuperior = new javax.swing.JPanel();
         txtInformacion = new javax.swing.JLabel();
-        txtEmail6 = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtEmail7 = new javax.swing.JTextField();
+        txtApellido = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtEmail8 = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBoxRango = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btnGuardarCambios = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        lbAdministracion = new javax.swing.JLabel();
+        btnAdministrarUsuarios = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(950, 700));
         setMinimumSize(new java.awt.Dimension(950, 700));
@@ -50,7 +57,7 @@ public class PanelConfiguraciones extends javax.swing.JPanel {
 
         txtInformacion.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
         txtInformacion.setForeground(new java.awt.Color(255, 255, 255));
-        txtInformacion.setText("Meownager/ Generacion de reportes");
+        txtInformacion.setText("Meownager/ Configuracion general");
 
         javax.swing.GroupLayout panelBarraSuperiorLayout = new javax.swing.GroupLayout(panelBarraSuperior);
         panelBarraSuperior.setLayout(panelBarraSuperiorLayout);
@@ -69,106 +76,86 @@ public class PanelConfiguraciones extends javax.swing.JPanel {
                 .addContainerGap(55, Short.MAX_VALUE))
         );
 
-        txtEmail6.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        txtEmail6.setForeground(new java.awt.Color(153, 153, 153));
-        txtEmail6.setText("Ingresa tu nombre");
-        txtEmail6.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtEmail6.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtEmail6FocusLost(evt);
-            }
-        });
-        txtEmail6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtEmail6MousePressed(evt);
-            }
-        });
-        txtEmail6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtEmail6KeyPressed(evt);
-            }
-        });
+        txtNombre.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(153, 153, 153));
+        txtNombre.setText("Ingresa tu nombre");
+        txtNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel1.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
         jLabel1.setText("Nombre");
 
         jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 20)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel2.setForeground(new java.awt.Color(14, 164, 157));
         jLabel2.setText("Actualiza tu información de perfil.");
 
-        jLabel3.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Roboto Black", 1, 30)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(14, 125, 128));
         jLabel3.setText("CAMBIO DE CONTRASEÑA");
 
         jLabel4.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
         jLabel4.setText("Apellido");
 
-        txtEmail7.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        txtEmail7.setForeground(new java.awt.Color(153, 153, 153));
-        txtEmail7.setText("Ingresa tu apellido");
-        txtEmail7.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtEmail7.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtEmail7FocusLost(evt);
+        txtApellido.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        txtApellido.setForeground(new java.awt.Color(153, 153, 153));
+        txtApellido.setText("Ingresa tu apellido");
+        txtApellido.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtApellido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtApellidoMouseExited(evt);
             }
-        });
-        txtEmail7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtEmail7MousePressed(evt);
-            }
-        });
-        txtEmail7.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtEmail7KeyPressed(evt);
+                txtApellidoMousePressed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
         jLabel5.setText("Email");
 
-        txtEmail8.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        txtEmail8.setForeground(new java.awt.Color(153, 153, 153));
-        txtEmail8.setText("Ingresa tu email");
-        txtEmail8.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtEmail8.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtEmail8FocusLost(evt);
-            }
-        });
-        txtEmail8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtEmail8MousePressed(evt);
-            }
-        });
-        txtEmail8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmail8ActionPerformed(evt);
-            }
-        });
-        txtEmail8.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtEmail8KeyPressed(evt);
-            }
-        });
+        txtEmail.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(153, 153, 153));
+        txtEmail.setText("Ingresa tu email");
+        txtEmail.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
         jLabel6.setText("Rango");
 
-        jComboBox1.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Administrador" }));
+        jComboBoxRango.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jComboBoxRango.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Administrador" }));
+        jComboBoxRango.setEnabled(false);
 
+        jButton1.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
         jButton1.setText("Actualizar contraseña");
+        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        jLabel7.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Roboto Black", 1, 30)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(14, 125, 128));
         jLabel7.setText("CONFIGURACIÓN DE PERFIL");
 
-        jButton2.setText("Guardar Cambios");
+        btnGuardarCambios.setBackground(new java.awt.Color(14, 207, 181));
+        btnGuardarCambios.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
+        btnGuardarCambios.setForeground(new java.awt.Color(255, 255, 255));
+        btnGuardarCambios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/guardar-el-archivo.png"))); // NOI18N
+        btnGuardarCambios.setText("Guardar Cambios");
 
         jLabel8.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
         jLabel8.setText("Nueva contraseña");
 
         jLabel9.setFont(new java.awt.Font("Roboto Black", 1, 20)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel9.setForeground(new java.awt.Color(14, 164, 157));
         jLabel9.setText("Actualiza tu contraseña de ingreso.");
+
+        lbAdministracion.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
+        lbAdministracion.setText("Administracion");
+
+        btnAdministrarUsuarios.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
+        btnAdministrarUsuarios.setText("Gestionar Usuarios");
+        btnAdministrarUsuarios.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnAdministrarUsuarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAdministrarUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdministrarUsuariosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout backgoundLayout = new javax.swing.GroupLayout(backgound);
         backgound.setLayout(backgoundLayout);
@@ -184,27 +171,31 @@ public class PanelConfiguraciones extends javax.swing.JPanel {
                         .addGap(50, 50, 50)
                         .addGroup(backgoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(backgoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(backgoundLayout.createSequentialGroup()
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(backgoundLayout.createSequentialGroup()
                                     .addGroup(backgoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtEmail6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtEmail8, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(64, 64, 64)
                                     .addGroup(backgoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtEmail7, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                                        .addComponent(txtApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
                                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
+                                        .addComponent(jComboBoxRango, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(btnGuardarCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(backgoundLayout.createSequentialGroup()
+                                    .addGroup(backgoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                                    .addGroup(backgoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(btnAdministrarUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lbAdministracion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         backgoundLayout.setVerticalGroup(
@@ -214,39 +205,45 @@ public class PanelConfiguraciones extends javax.swing.JPanel {
                 .addComponent(txtMensaje)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelBarraSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(25, 25, 25)
+                .addComponent(jLabel7)
+                .addGap(0, 0, 0)
                 .addGroup(backgoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(backgoundLayout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtEmail7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(backgoundLayout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(0, 0, 0)
                         .addComponent(jLabel2)
-                        .addGap(35, 35, 35)
+                        .addGap(25, 25, 25)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtEmail6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(backgoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(backgoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEmail8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
+                    .addComponent(jComboBoxRango, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
                 .addComponent(jLabel3)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel9)
-                .addGap(35, 35, 35)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(backgoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addGap(25, 25, 25)
+                .addGroup(backgoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(backgoundLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(backgoundLayout.createSequentialGroup()
+                        .addComponent(lbAdministracion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAdministrarUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(btnGuardarCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -261,67 +258,47 @@ public class PanelConfiguraciones extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtEmail6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmail6FocusLost
-//        // Evento: Cuando el mouse sale del campo y este esta vacio
-//        if (txtEmail.getText().equals("")) {
-//            txtEmail.setText("Email");
-//            txtEmail.setForeground(Color.decode("#999999"));
-//            limpiarNombre = true;
-//        }
-    }//GEN-LAST:event_txtEmail6FocusLost
+    private void ShowPanel(JPanel p) {
+        p.setSize(950, 700);
+        p.setLocation(0, 0);
 
-    private void txtEmail6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEmail6MousePressed
-//        // Evento: Cuando el mouse presiona el campo
-//        if (limpiarNombre) {
-//            txtEmail.setText("");
-//            txtEmail.setForeground(Color.black);
-//            limpiarNombre = false;
-//        }
-    }//GEN-LAST:event_txtEmail6MousePressed
+        // Configurar el layout de backgound como BorderLayout
+        backgound.setLayout(new BorderLayout());
 
-    private void txtEmail6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmail6KeyPressed
-//        // Evento: Limpiar campo cuando se presione alguna tecla en este.
-//        if (limiarCorreo) {
-//            txtEmail.setText("");
-//            txtEmail.setForeground(Color.black);
-//            limiarCorreo = false;
-//        }
-    }//GEN-LAST:event_txtEmail6KeyPressed
+        backgound.removeAll();
+        backgound.add(p, BorderLayout.CENTER);
+        backgound.revalidate();
+        backgound.repaint();
 
-    private void txtEmail7FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmail7FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmail7FocusLost
+    }
 
-    private void txtEmail7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEmail7MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmail7MousePressed
+    private void btnAdministrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministrarUsuariosActionPerformed
+        PanelGestionarUsuarios panelGestionarUsuarios = new PanelGestionarUsuarios();
+        GestionarUsuarioController gestionarUsuarioController = new GestionarUsuarioController(panelGestionarUsuarios);
+        ShowPanel(panelGestionarUsuarios);
+    }//GEN-LAST:event_btnAdministrarUsuariosActionPerformed
 
-    private void txtEmail7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmail7KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmail7KeyPressed
+    private void txtApellidoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtApellidoMousePressed
+        if (txtApellido.getText().equals("Ingresa tu apellido")) {
+            txtApellido.setText("");
+            txtApellido.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_txtApellidoMousePressed
 
-    private void txtEmail8FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmail8FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmail8FocusLost
-
-    private void txtEmail8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEmail8MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmail8MousePressed
-
-    private void txtEmail8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmail8KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmail8KeyPressed
-
-    private void txtEmail8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmail8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmail8ActionPerformed
+    private void txtApellidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtApellidoMouseExited
+        if (txtApellido.getText().isEmpty()) {
+            txtApellido.setText("Ingresa tu apellido");
+            txtApellido.setForeground(Color.decode("#999999"));
+        }
+    }//GEN-LAST:event_txtApellidoMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel backgound;
+    public javax.swing.JButton btnAdministrarUsuarios;
+    public javax.swing.JButton btnGuardarCambios;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    public javax.swing.JComboBox<String> jComboBoxRango;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -331,11 +308,12 @@ public class PanelConfiguraciones extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    public javax.swing.JLabel lbAdministracion;
     private javax.swing.JPanel panelBarraSuperior;
-    public javax.swing.JTextField txtEmail6;
-    public javax.swing.JTextField txtEmail7;
-    public javax.swing.JTextField txtEmail8;
+    public javax.swing.JTextField txtApellido;
+    public javax.swing.JTextField txtEmail;
     private javax.swing.JLabel txtInformacion;
     private javax.swing.JLabel txtMensaje;
+    public javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

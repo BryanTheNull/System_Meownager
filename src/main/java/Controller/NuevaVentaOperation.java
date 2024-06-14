@@ -147,7 +147,7 @@ public class NuevaVentaOperation {
             ps.setInt(1, ID_Venta);
             ps.setInt(2, ID_Producto);
             ps.setInt(3, cantidad);
-            ps.setInt(3, precio_Unitario);
+            ps.setInt(4, precio_Unitario);
             ps.executeUpdate();
             System.out.println(ps.toString());
         } catch (SQLException e) {

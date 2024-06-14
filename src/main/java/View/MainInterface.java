@@ -32,20 +32,18 @@ public class MainInterface extends javax.swing.JFrame {
 
     PanelCategorias panelCategorias = new PanelCategorias();
     CategoriaController categoriaController = new CategoriaController(panelCategorias);
-    
-    
+
     PanelClientes panelClientes = new PanelClientes();
     ClienteController clienteController = new ClienteController(panelClientes);
-    
+
     PanelProveedores panelProveedores = new PanelProveedores();
     ProveedorController proveedorController = new ProveedorController(panelProveedores);
-    
+
     PanelReportes panelReportes = new PanelReportes();
     ReporteController reporteController = new ReporteController(panelReportes);
-    
+
     PanelConfiguraciones panelConfiguraciones = new PanelConfiguraciones();
     ConfiguracionController configuracionController = new ConfiguracionController(panelConfiguraciones);
-    
 
     public MainInterface() {
         initComponents();
@@ -95,7 +93,6 @@ public class MainInterface extends javax.swing.JFrame {
         setTitle("Meownager");
         setLocation(new java.awt.Point(0, 0));
         setLocationByPlatform(true);
-        setMaximumSize(new java.awt.Dimension(1200, 700));
         setMinimumSize(new java.awt.Dimension(1200, 700));
         setResizable(false);
 
@@ -550,18 +547,23 @@ public class MainInterface extends javax.swing.JFrame {
 
     // EVENTOS PARA CAMBIAR PANELES.
     private void btnMenuPrincipalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuPrincipalMousePressed
+        PanelInicio panelInicio = new PanelInicio();
+        InicioController inicioController = new InicioController(panelInicio);
         ShowPanel(panelInicio);
     }//GEN-LAST:event_btnMenuPrincipalMousePressed
 
     private void btnProductosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductosMousePressed
+
         ShowPanel(panelProductos);
     }//GEN-LAST:event_btnProductosMousePressed
 
     private void btnCategoriasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMousePressed
+
         ShowPanel(panelCategorias);
     }//GEN-LAST:event_btnCategoriasMousePressed
 
     private void btnProveedoresMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProveedoresMousePressed
+
         ShowPanel(panelProveedores);
     }//GEN-LAST:event_btnProveedoresMousePressed
 
@@ -570,6 +572,7 @@ public class MainInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_btnReportesMousePressed
 
     private void btnConfiguracionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfiguracionMousePressed
+
         ShowPanel(panelConfiguraciones);
     }//GEN-LAST:event_btnConfiguracionMousePressed
 
@@ -657,7 +660,6 @@ public class MainInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClientesMousePressed
 
 
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
     private javax.swing.JPanel btnCategorias;

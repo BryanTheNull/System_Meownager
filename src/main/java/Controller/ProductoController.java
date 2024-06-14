@@ -135,7 +135,7 @@ public class ProductoController implements ActionListener {
         String nombre = productoForm.txtNombre.getText();
         String descripcion = productoForm.txtDescripcion.getText();
         String codigo = productoForm.txtCodigo.getText();
-        double precio = Double.parseDouble(productoForm.txtPrecio.getText());
+        String precio = (String) productoForm.txtPrecio.getText();
         int stock = (int) productoForm.jSpinnerStock.getValue();
 
         // REALIZAR VALIDACIONES DE CAMPOS 
@@ -178,7 +178,9 @@ public class ProductoController implements ActionListener {
         }
 
         // Validar precio
-        // ...
+        if(precio.isEmpty()){
+            
+        }
         // Validar Stock
         // ...
         return true;

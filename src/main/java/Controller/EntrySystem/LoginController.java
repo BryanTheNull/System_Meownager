@@ -33,21 +33,21 @@ public class LoginController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == login.btnIniciarSesiónPrincipal) {
-//            // Verificar campos de texto y datos ingresados
-//            if (!validarCamposLogin()) {
-//                return;
-//            }
-//
-//            // Verificar que el correo ingresado exista
-//            if (!verificarExistenciaEmail()) {
-//                return;
-//            }
-//
-//            // Verificar si la contraseña existe
-//            if (verificarContraseñaAcceso()) {
+            // Verificar campos de texto y datos ingresados
+            if (!validarCamposLogin()) {
+                return;
+            }
+
+            // Verificar que el correo ingresado exista
+            if (!verificarExistenciaEmail()) {
+                return;
+            }
+
+            // Verificar si la contraseña existe
+            if (verificarContraseñaAcceso()) {
                 accederSistema();
                 obtenerDatosUsuario();
-//            }
+            }
         }
 
         if (e.getSource() == login.btnRegistraseSecundario) {
@@ -65,9 +65,18 @@ public class LoginController implements ActionListener {
     }
 
     // Metodos de Login
+    private boolean solicitarCambioContraseña() {
+  
+        obtenerDatosUsuario();
+        
+        
+        
+        return true;
+    }
+
     private boolean validarCamposLogin() {
         String email = login.txtEmail.getText();
-        
+
         String contraseña = login.txtContraseña.getText();
 
         // Validar Contraseña en blanco
@@ -154,14 +163,8 @@ public class LoginController implements ActionListener {
         login.dispose();
         return mainInterface;
     }
-    
-    private void obtenerDatosUsuario(){
+
+    private void obtenerDatosUsuario() {
         loginOp.SQL_ObtenerDatosUsuario(emailObtenido);
-        
-        // Imprir usuario
-//        System.out.println(Usuario.getInstance().getNombre());
-//        System.out.println(Usuario.getInstance().getApellido());
-//        System.out.println(Usuario.getInstance().getEmail());
-//        System.out.println(Usuario.getInstance().getRango());            
     }
 }

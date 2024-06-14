@@ -106,6 +106,18 @@
             <version>5.1.1</version> <!-- Verifica si hay una versión más reciente -->
         </dependency>
         
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.14.1</version> <!-- Asegúrate de usar la versión más reciente -->
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.14.1</version>
+        </dependency>
+        
     </dependencies>
     
     <properties>

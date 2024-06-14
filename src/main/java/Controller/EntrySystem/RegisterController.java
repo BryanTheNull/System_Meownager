@@ -38,20 +38,8 @@ public class RegisterController implements ActionListener, DocumentListener {
             if (!verificarCorreo()) {
                 return;
             }
-
             crearCuenta();
-
         }
-
-//
-//                        if (crearCuenta()) {
-//                            Login login = new Login();
-//                            login.txtEmail.setText(email);
-//                            login.txtContraseña.setText(contraseña);
-//                            login.txtContraseña.setEchoChar('*');
-//                            login.btnIniciarSesiónPrincipal.requestFocusInWindow();
-//                            login.setVisible(true);
-//                            register.dispose();
         if (e.getSource() == register.btnIniciarSesiónSecundario) {
             Login iniciarSesion = iniciarSesion();
             iniciarSesion.txtEmail.requestFocusInWindow();

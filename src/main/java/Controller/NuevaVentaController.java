@@ -80,12 +80,12 @@ public class NuevaVentaController implements ActionListener {
             JOptionPane.showMessageDialog(panelNuevaVenta, "Se ha producido un error al intentar realizar la venta.", "Error al realizar venta", JOptionPane.ERROR_MESSAGE);
         }
         cancelarVenta();
-        
+
     }
 
     private void insertarDetallesDeVenta(int NroVenta) {
         // OBTENER DATOS DE LAS JTABLE Y INSERTAR DETALLES DE VENTA
-         for (int i = 0; i < model.getRowCount(); i++) {
+        for (int i = 0; i < model.getRowCount(); i++) {
             int ID_Venta = Integer.parseInt(panelNuevaVenta.txtNroVenta.getText());
             int ID_Producto = (int) model.getValueAt(i, 1);
             int Cantidad = (int) model.getValueAt(i, 3);
@@ -94,7 +94,7 @@ public class NuevaVentaController implements ActionListener {
             int Precio = precioFormateado / Cantidad;
             nuevaVentaOp.SQL_InsertarDetalleVenta(ID_Venta, ID_Producto, Cantidad, Precio);
         }
-        
+
     }
 
     private void cargarClientes() {
@@ -139,6 +139,7 @@ public class NuevaVentaController implements ActionListener {
 
     private void cancelarVenta() {
         PanelInicio panelinicio = new PanelInicio();
+        InicioController inicioController = new InicioController(panelinicio);
         ShowPanel(panelinicio);
     }
 
